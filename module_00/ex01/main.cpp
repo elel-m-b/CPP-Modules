@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include <iomanip>      
-#include <limits> 
+#include <iomanip>
+#include <limits>
 
 class Contact
 {
@@ -13,25 +13,34 @@ class Contact
     std::string darkestsecret;
 
     public:
-    void setContact(std::string &first_name, std::string &last_name, std::string &nickname, std::string &phone, std::string &secret);
+    void setContact(std::string f, std::string l, std::string n, std::string phone, std::string secret);
+    std::string getFirstName();
+    std::string getLastName();
+    std::string getNickname();
+    std::string getPhone();
+    std::string getSecret();
     void displayContact();
-    std::string getFirstName() const { return firstName; }
-    std::string getLastName() const { return lastName; }
-    std::string getNickname() const { return nickname; }
 };
 
 class PhoneBook
 {
     private:
     Contact contact[8];
-    int index = 0;
+    int index;
+    int count;
+
+    std::string formatField(std::string str);
+
     public:
+    PhoneBook();
     void addContact();
     void searchContact();
     void displayContact();
 };
 
-void Contact::setContact(std::string &f, std::string &l, std::string &n, std::string &phone, std::string &secret)
+// -------------------- Contact methods --------------------
+
+void Contact::setContact(std::string f, std::string l, std::string n, std::string phone, std::string secret)
 {
     firstName = f;
     lastName = l;
@@ -40,26 +49,11 @@ void Contact::setContact(std::string &f, std::string &l, std::string &n, std::st
     darkestsecret = secret;
 }
 
-void PhoneBook::addContact()
-{
-    std::string     first_name;
-    std::string     last_name;
-    std::string     nickname;
-    std::string     phone;
-    std::string     ds;
-    std::cout << "Enter yout firt name: ";
-    std::cin >> first_name;
-    std::cout << "Enter your last name: ";
-    std::cin >> last_name;
-    std::cout << "Enter your nickname: ";
-    std::cin >> nickname;
-    std::cout << "Enter your phone number: ";
-    std::cin >> phone;
-    std::cout << "Enter darkest secret: ";
-    std::cin >> ds;
-    contact[index].setContact(first_name, last_name, nickname, phone, ds);
-    index++;
-}
+std::string Contact::getFirstName() { return firstName; }
+std::string Contact::getLastName() { return lastName; }
+std::string Contact::getNickname() { return nickname; }
+std::string Contact::getPhone() { return phoneN; }
+std::string Contact::getSecret() { return darkestsecret; }
 
 void Contact::displayContact()
 {
@@ -70,64 +64,78 @@ void Contact::displayContact()
     std::cout << "Secret: " << darkestsecret << "\n";
 }
 
-void PhoneBook::displayContact()
+PhoneBook::PhoneBook()
 {
-    int     i;
-    i = 0;
-    while (i < 8)
-    {
-        contact[i].displayContact();
-        i++;
-    }
-
+    index = 0;
+    count = 0;
 }
-std::string formatField(const std::string &str)
+
+std::string PhoneBook::formatField(std::string str)
 {
     if (str.length() > 10)
         return str.substr(0, 9) + ".";
-    return std::string(10 - str.length(), ' ') + str;
+    return str;
+}
+
+void PhoneBook::addContact()
+{
+    std::string first_name, last_name, nickname, phone, ds;
+
+    std::cout << "Enter your first name: ";
+    std::getline(std::cin, first_name);
+    std::cout << "Enter your last name: ";
+    std::getline(std::cin, last_name);
+    std::cout << "Enter your nickname: ";
+    std::getline(std::cin, nickname);
+    std::cout << "Enter your phone number: ";
+    std::getline(std::cin, phone);
+    std::cout << "Enter darkest secret: ";
+    std::getline(std::cin, ds);
+
+    contact[index].setContact(first_name, last_name, nickname, phone, ds);
+    index = (index + 1) % 8;
+    if (count < 8) count++;
 }
 
 void PhoneBook::searchContact()
 {
-    if (index == 0)
+    if (count == 0)
     {
         std::cout << "PhoneBook is empty.\n";
         return;
     }
 
-    // 1. Display header
-    std::cout << "---------------------------------------------\n";
-    std::cout << "|   Index  |First Name| Last Name| Nickname |\n";
-    std::cout << "---------------------------------------------\n";
+    std::cout << "     Index|First Name| Last Name|  Nickname\n";
 
-    // 2. Display each contact in table format
-    for (int i = 0; i < index && i < 8; i++)
+    for (int i = 0; i < count; i++)
     {
-        std::cout << "|" << std::setw(10) << i
-                  << "|" << formatField(contact[i].getFirstName())
-                  << "|" << formatField(contact[i].getLastName())
-                  << "|" << formatField(contact[i].getNickname())
-                  << "|\n";
+        std::cout << std::setw(10) << i << "|"
+                  << std::setw(10) << formatField(contact[i].getFirstName()) << "|"
+                  << std::setw(10) << formatField(contact[i].getLastName()) << "|"
+                  << std::setw(10) << formatField(contact[i].getNickname()) << "\n";
     }
-    std::cout << "---------------------------------------------\n";
 
-    // 3. Ask user for index
     std::cout << "Enter the index of the contact to display: ";
     int idx;
-    if (!(std::cin >> idx) || idx < 0 || idx >= index)
+    std::cin >> idx;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clear newline
+
+    if (idx < 0 || idx >= count)
     {
-        std::cout << "Invalid index.\n";
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid index!\n";
         return;
     }
 
-    // 4. Display full contact info
     contact[idx].displayContact();
+}
 
-    // clean up leftover newline so getline() works again
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+void PhoneBook::displayContact()
+{
+    for (int i = 0; i < count; i++)
+    {
+        contact[i].displayContact();
+        std::cout << "------------------------\n";
+    }
 }
 
 int main()
@@ -135,22 +143,22 @@ int main()
     std::string command;
     PhoneBook phone;
 
-    while (1)
+    while (true)
     {
         std::cout << "Enter your cmd: ";
         if (!std::getline(std::cin, command))
-        {
-            perror("getline:");
             break;
-        }
+
         if (command == "ADD")
             phone.addContact();
         else if (command == "SEARCH")
             phone.searchContact();
+        else if (command == "DISPLAY")
+            phone.displayContact();
         else if (command == "EXIT")
             break;
         else
-            std::cout << "ivalid argument\n";
+            std::cout << "Invalid command\n";
     }
     return 0;
 }
