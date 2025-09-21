@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
-
-#include <iostream>
-#include <string>
+#include <iomanip>      
+#include <limits> 
 
 class Contact
 {
@@ -15,7 +14,10 @@ class Contact
 
     public:
     void setContact(std::string &first_name, std::string &last_name, std::string &nickname, std::string &phone, std::string &secret);
-    void displayContact() const;
+    void displayContact();
+    std::string getFirstName() const { return firstName; }
+    std::string getLastName() const { return lastName; }
+    std::string getNickname() const { return nickname; }
 };
 
 class PhoneBook
@@ -59,7 +61,7 @@ void PhoneBook::addContact()
     index++;
 }
 
-void Contact::displayContact() const
+void Contact::displayContact()
 {
     std::cout << "First Name: " << firstName << "\n";
     std::cout << "Last Name: " << lastName << "\n";
@@ -79,9 +81,53 @@ void PhoneBook::displayContact()
     }
 
 }
+std::string formatField(const std::string &str)
+{
+    if (str.length() > 10)
+        return str.substr(0, 9) + ".";
+    return std::string(10 - str.length(), ' ') + str;
+}
+
 void PhoneBook::searchContact()
 {
-    std::cout << "Search ta lghda w nkhdmo hh\n";
+    if (index == 0)
+    {
+        std::cout << "PhoneBook is empty.\n";
+        return;
+    }
+
+    // 1. Display header
+    std::cout << "---------------------------------------------\n";
+    std::cout << "|   Index  |First Name| Last Name| Nickname |\n";
+    std::cout << "---------------------------------------------\n";
+
+    // 2. Display each contact in table format
+    for (int i = 0; i < index && i < 8; i++)
+    {
+        std::cout << "|" << std::setw(10) << i
+                  << "|" << formatField(contact[i].getFirstName())
+                  << "|" << formatField(contact[i].getLastName())
+                  << "|" << formatField(contact[i].getNickname())
+                  << "|\n";
+    }
+    std::cout << "---------------------------------------------\n";
+
+    // 3. Ask user for index
+    std::cout << "Enter the index of the contact to display: ";
+    int idx;
+    if (!(std::cin >> idx) || idx < 0 || idx >= index)
+    {
+        std::cout << "Invalid index.\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+
+    // 4. Display full contact info
+    contact[idx].displayContact();
+
+    // clean up leftover newline so getline() works again
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 int main()
@@ -106,6 +152,5 @@ int main()
         else
             std::cout << "ivalid argument\n";
     }
-
     return 0;
 }
