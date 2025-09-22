@@ -28,17 +28,14 @@ class PhoneBook
     Contact contact[8];
     int index;
     int count;
-
-    std::string formatField(std::string str);
-
     public:
     PhoneBook();
+    std::string formatField(std::string str);
     void addContact();
     void searchContact();
     void displayContact();
+    int isNumber(const std::string &str);
 };
-
-// -------------------- Contact methods --------------------
 
 void Contact::setContact(std::string f, std::string l, std::string n, std::string phone, std::string secret)
 {
@@ -64,6 +61,16 @@ void Contact::displayContact()
     std::cout << "Secret: " << darkestsecret << "\n";
 }
 
+int PhoneBook::isNumber(const std::string &str)
+{
+    if (str.empty())
+        return (0);
+    for (int i = 0; i < str.length(); i++)
+        if (!isdigit(str[i]))
+            return (0);
+    return (1);
+}
+
 PhoneBook::PhoneBook()
 {
     index = 0;
@@ -79,6 +86,8 @@ std::string PhoneBook::formatField(std::string str)
 
 void PhoneBook::addContact()
 {
+    int     err;
+    err = 0;
     std::string first_name, last_name, nickname, phone, ds;
 
     std::cout << "Enter your first name: ";
@@ -91,10 +100,20 @@ void PhoneBook::addContact()
     std::getline(std::cin, phone);
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, ds);
-
+    std::cout << "Enter your phone number: ";
+    std::getline(std::cin, phone);
+    if (!isNumber(phone))
+    std::cout << "Invalid input! Phone number must contain only digits.\n";
+    while (!isNumber(phone));
+    
     contact[index].setContact(first_name, last_name, nickname, phone, ds);
     index = (index + 1) % 8;
-    if (count < 8) count++;
+    if (8 > count) count++;
+    if (err == 1)
+    {
+        std::cout << "Invalid input\n";
+        return ;
+    }
 }
 
 void PhoneBook::searchContact()
@@ -109,23 +128,34 @@ void PhoneBook::searchContact()
 
     for (int i = 0; i < count; i++)
     {
-        std::cout << std::setw(10) << i << "|"
-                  << std::setw(10) << formatField(contact[i].getFirstName()) << "|"
-                  << std::setw(10) << formatField(contact[i].getLastName()) << "|"
-                  << std::setw(10) << formatField(contact[i].getNickname()) << "\n";
+        std::cout << std::setw(10) << i << "|" << std::setw(10) << formatField(contact[i].getFirstName()) << "|" << std::setw(10) << formatField(contact[i].getLastName()) << "|"<< std::setw(10) << formatField(contact[i].getNickname()) << "\n";
     }
-
     std::cout << "Enter the index of the contact to display: ";
     int idx;
-    std::cin >> idx;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clear newline
-
-    if (idx < 0 || idx >= count)
+    while (1)
     {
-        std::cout << "Invalid index!\n";
-        return;
-    }
+        std::cout << "Enter the index of the contact to display: ";
+        std::string input;
+        std::getline(std::cin, input);
+        int  valid = 1;
+        for (size_t i = 0; i < input.length(); i++)
+            if (!isdigit(input[i]))
+                valid = 0;
 
+        if (!valid || input.empty())
+        {
+            std::cout << "Invalid input! Index must be a number.\n";
+            continue;
+        }
+
+        idx = std::stoi(input);
+        if (idx < 0 || idx >= count)
+        {
+            std::cout << "Invalid input! Index out of range.\n";
+            continue;
+        }
+        break;
+    }
     contact[idx].displayContact();
 }
 
@@ -143,12 +173,11 @@ int main()
     std::string command;
     PhoneBook phone;
 
-    while (true)
+    while (1)
     {
         std::cout << "Enter your cmd: ";
         if (!std::getline(std::cin, command))
             break;
-
         if (command == "ADD")
             phone.addContact();
         else if (command == "SEARCH")
