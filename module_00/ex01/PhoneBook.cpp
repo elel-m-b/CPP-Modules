@@ -1,67 +1,4 @@
-// #include "PhoneBook .hpp"
-// #include "Account.hpp"
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <limits>
-
-class Contact
-{
-    private:
-    std::string firstName;
-    std::string lastName;
-    std::string nickname;
-    std::string phoneN;
-    std::string darkestsecret;
-
-    public:
-    void setContact(std::string f, std::string l, std::string n, std::string phone, std::string secret);
-    std::string getFirstName();
-    std::string getLastName();
-    std::string getNickname();
-    std::string getPhone();
-    std::string getSecret();
-    void displayContact();
-};
-
-class PhoneBook
-{
-    private:
-    Contact contact[8];
-    int index;
-    int count;
-    public:
-    PhoneBook();
-    std::string formatField(std::string str);
-    void addContact();
-    void searchContact();
-    void displayContact();
-    int isNumber(const std::string &str);
-};
-
-void Contact::setContact(std::string f, std::string l, std::string n, std::string phone, std::string secret)
-{
-    firstName = f;
-    lastName = l;
-    nickname = n;
-    phoneN = phone;
-    darkestsecret = secret;
-}
-
-std::string Contact::getFirstName() { return firstName; }
-std::string Contact::getLastName() { return lastName; }
-std::string Contact::getNickname() { return nickname; }
-std::string Contact::getPhone() { return phoneN; }
-std::string Contact::getSecret() { return darkestsecret; }
-
-void Contact::displayContact()
-{
-    std::cout << "First Name: " << firstName << "\n";
-    std::cout << "Last Name: " << lastName << "\n";
-    std::cout << "Nickname: " << nickname << "\n";
-    std::cout << "Phone: " << phoneN << "\n";
-    std::cout << "Secret: " << darkestsecret << "\n";
-}
+#include "PhoneBook .hpp"
 
 int PhoneBook::isNumber(const std::string &str)
 {
@@ -131,8 +68,7 @@ void PhoneBook::searchContact()
     {
         std::cout << "Enter the index of the contact to display: ";
         std::string input;
-        if (!std::getline(std::cin, input))
-            break;
+        std::getline(std::cin, input);
         int  valid = 1;
         for (size_t i = 0; i < input.length(); i++)
             if (!isdigit(input[i]))
@@ -162,28 +98,4 @@ void PhoneBook::displayContact()
         contact[i].displayContact();
         std::cout << "------------------------\n";
     }
-}
-
-int main()
-{
-    std::string command;
-    PhoneBook phone;
-
-    while (1)
-    {
-        std::cout << "Enter your cmd: ";
-        if (!std::getline(std::cin, command))
-            break;
-        if (command == "ADD")
-            phone.addContact();
-        else if (command == "SEARCH")
-            phone.searchContact();
-        else if (command == "DISPLAY")
-            phone.displayContact();
-        else if (command == "EXIT")
-            break;
-        else
-            std::cout << "Invalid command\n";
-    }
-    return 0;
 }
