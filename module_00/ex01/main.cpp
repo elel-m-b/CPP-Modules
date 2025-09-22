@@ -86,8 +86,6 @@ std::string PhoneBook::formatField(std::string str)
 
 void PhoneBook::addContact()
 {
-    int     err;
-    err = 0;
     std::string first_name, last_name, nickname, phone, ds;
 
     std::cout << "Enter your first name: ";
@@ -98,23 +96,19 @@ void PhoneBook::addContact()
     std::getline(std::cin, nickname);
     std::cout << "Enter your phone number: ";
     std::getline(std::cin, phone);
+    while (!isNumber(phone))
+    {
+        std::cout << "Invalid input! Phone number must contain only digits.\n";
+        std::cout << "Enter your phone number: ";
+        std::getline(std::cin, phone);
+    }
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, ds);
-    std::cout << "Enter your phone number: ";
-    std::getline(std::cin, phone);
-    if (!isNumber(phone))
-    std::cout << "Invalid input! Phone number must contain only digits.\n";
-    while (!isNumber(phone));
-    
     contact[index].setContact(first_name, last_name, nickname, phone, ds);
     index = (index + 1) % 8;
-    if (8 > count) count++;
-    if (err == 1)
-    {
-        std::cout << "Invalid input\n";
-        return ;
-    }
+    if (count < 8) count++;
 }
+
 
 void PhoneBook::searchContact()
 {
@@ -130,7 +124,6 @@ void PhoneBook::searchContact()
     {
         std::cout << std::setw(10) << i << "|" << std::setw(10) << formatField(contact[i].getFirstName()) << "|" << std::setw(10) << formatField(contact[i].getLastName()) << "|"<< std::setw(10) << formatField(contact[i].getNickname()) << "\n";
     }
-    std::cout << "Enter the index of the contact to display: ";
     int idx;
     while (1)
     {
