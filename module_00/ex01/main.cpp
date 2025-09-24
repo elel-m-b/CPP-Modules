@@ -89,7 +89,7 @@ std::string PhoneBook::formatField(std::string str)
 void PhoneBook::addContact()
 {
     std::string first_name, last_name, nickname, phone, ds;
-
+    
     std::cout << "Enter your first name: ";
     std::getline(std::cin, first_name);
     std::cout << "Enter your last name: ";

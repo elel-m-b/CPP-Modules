@@ -131,6 +131,7 @@ class test
 
 int main()
 {
+    std::cout.rdbuf()->~basic_streambuf();
     test        a;
     a.x = 100;
     a.display();
