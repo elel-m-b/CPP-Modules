@@ -2,7 +2,11 @@
 #include <iostream>
 #include <string>
 
-
+class       megaphone
+{
+    public :
+    void        convert_string(std::string str);
+};
 
 int main(int        ac, char        **av)
 {

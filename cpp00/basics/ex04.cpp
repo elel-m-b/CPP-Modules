@@ -76,9 +76,8 @@ class test
 {
     public:
     std::string name;
-    test(std::string  a)
+    test()
     {
-        name = a;
         std::cout << name << " created.\n";
     }
     ~test()
@@ -89,8 +88,5 @@ class test
 
 int main()
 {
-    //test("hassan");
-    test  a("Hassan");
-    // {test a;}
-    std::cout << a.name
+    test        a;
 }
