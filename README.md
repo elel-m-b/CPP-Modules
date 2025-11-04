@@ -11,11 +11,6 @@
 
 *A comprehensive collection of exercises designed to master the fundamentals of **C++ programming***
 
-[Getting Started](#-getting-started) •
-[Modules](#-modules-overview) •
-[Requirements](#-requirements) •
-[Contributing](#-contributing)
-
 </div>
 
 ---
