@@ -4,8 +4,8 @@
 
 <div align="center">
   <img 
-    src="file:///home/elel-m-b/Documents/C++.png"
-    alt="Django Python"
+    src="/home/elel-m-b/Documents/C++.png"
+    alt="C++"
     style="width: 100%; max-width: 1200px; height: auto; border-radius: 8px;"
   />
 </div>
