@@ -4,11 +4,12 @@
 
 <div align="center">
   <img 
-    src="/home/elel-m-b/Documents/C++.png"
+    src="https://github.com/user-attachments/assets/74f39eb1-8c7e-4faa-887f-9a33742fe1dc"
     alt="C++"
     style="width: 100%; max-width: 1200px; height: auto; border-radius: 8px;"
   />
 </div>
+
 
 <div align="center">
 
