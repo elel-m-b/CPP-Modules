@@ -1,12 +1,8 @@
 <div align="center">
-
 <p style="font-size:50px; font-weight:bold;">
 ⚔️ 42 C++ Modules ⚔️
 </p>
-
 </div>
-
-
 
 <div align="center">
   <img 
@@ -15,7 +11,6 @@
     style="width: 100%; max-width: 1200px; height: auto; border-radius: 8px;"
   />
 </div>
-
 
 <div align="center">
 
@@ -40,11 +35,14 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 
 ## 🗺️ Modules Overview
 
-<table align="center">
+<div align="center">
+
+<table>
 <tr>
 <td width="50%">
 
 ### 🏗️ **Foundation Modules**
+
 - **📦 Module 00** - *C++ Basics*
   - Namespaces & I/O streams
   - Classes & member functions
@@ -64,6 +62,7 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 <td width="50%">
 
 ### 🚀 **Advanced Modules**
+
 - **🔗 Module 03** - *Inheritance*
   - Class hierarchies
   - Protected members
@@ -74,59 +73,13 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
   - Pure virtual functions
   - Interface design
 
-- **⚠️ Module 05** - *Exception Handling*
-  - Try-catch blocks
-  - Custom exceptions
-  - RAII principles
-
-</td>
-</tr>
-</table align="center">
-
-<table>
-<tr>
-<td width="33%">
-
-### 🔧 **Module 06**
-**C++ Casts**
-- Static cast
-- Dynamic cast
-- Reinterpret cast
-- Const cast
-
-</td>
-<td width="33%">
-
-### 🧬 **Module 07**
-**Templates**
-- Function templates
-- Class templates
-- Template specialization
-- Generic programming
-
-</td>
-<td width="33%">
-
-### 📊 **Module 08**
-**STL Foundations**
-- Templated containers
-- Iterators
-- Algorithm basics
-- Custom containers
-
 </td>
 </tr>
 </table>
 
-<div align="center">
-
-### 🏆 **Module 09** - *STL Mastery*
-**Standard Template Library deep dive**  
-*Containers • Algorithms • Best Practices*
-
 </div>
 
-
+---
 
 ## 📖 Additional Resources
 
