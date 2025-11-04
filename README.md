@@ -1,6 +1,7 @@
-<div align="center" >
-  # ⚔️ 42 C++ Modules
+<div align="center" style="font-size: 40px; font-weight: bold; margin-top: 20px;">
+  ⚔️ 42 C++ Modules
 </div>
+
 
 <div align="center">
   <img 
