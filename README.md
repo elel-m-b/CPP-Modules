@@ -28,7 +28,7 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 
 ## 🗺️ Modules Overview
 
-<table>
+<table align="center">
 <tr>
 <td width="50%">
 
@@ -69,7 +69,7 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 
 </td>
 </tr>
-</table>
+</table align="center">
 
 <table>
 <tr>
