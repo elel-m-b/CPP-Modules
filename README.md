@@ -3,6 +3,14 @@
 </div>
 
 <div align="center">
+  <img 
+    src="file:///home/elel-m-b/Documents/C++.png"
+    alt="Django Python"
+    style="width: 100%; max-width: 1200px; height: auto; border-radius: 8px;"
+  />
+</div>
+
+<div align="center">
 
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![42](https://img.shields.io/badge/42-000000?style=for-the-badge&logo=42&logoColor=white)
