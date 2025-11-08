@@ -1,36 +1,36 @@
-
 #include <iostream>
 #include <string>
+#include <cctype>
 
-class       megaphone
+class Megaphone
 {
-    public :
-    void        convert_string(std::string str);
+public:
+    void convert_string(const std::string& str);
 };
 
-int main(int        ac, char        **av)
+void Megaphone::convert_string(const std::string& str)
+{
+    for (char c : str)
+        std::cout << static_cast<char>(std::toupper(c));
+}
+
+int main(int ac, char **av)
 {
     if (ac < 2)
-        return (0);
-    int     i;
-    i = 0;
-    int     j = 1;
-    while (av[j])
     {
-        std::string      original = av[j];
-        while (original[i])
-        {
-            if ((original[i] >= 'a' && original[i] <= 'z'))
-                original[i] -= 32;
-            i++;
-        }
-        i = 0;
-        while (original[i])
-        {
-            std::cout << original[i];
-            i++;
-        }
-        j++;
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+        return 0;
     }
-    return (1);
+
+    Megaphone speaker;
+
+    for (int i = 1; i < ac; i++)
+    {
+        speaker.convert_string(av[i]);
+        if (i < ac - 1)
+            std::cout << " ";
+    }
+
+    std::cout << std::endl;
+    return 0;
 }
