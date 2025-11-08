@@ -5,13 +5,13 @@
 class Megaphone
 {
 public:
-    void convert_string(const std::string& str);
+    void convert_string(const std::string &str);
 };
 
-void Megaphone::convert_string(const std::string& str)
+void Megaphone::convert_string(const std::string &str)
 {
-    for (char c : str)
-        std::cout << static_cast<char>(std::toupper(c));
+    for (size_t i = 0; i < str.length(); i++)
+        std::cout << static_cast<char>(std::toupper(str[i]));
 }
 
 int main(int ac, char **av)
