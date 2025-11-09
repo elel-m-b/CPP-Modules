@@ -1,10 +1,11 @@
-#include "PhoneBook .hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int PhoneBook::isNumber(const std::string &str)
 {
     if (str.empty())
         return (0);
-    for (int i = 0; i < str.length(); i++)
+    for (size_t i = 0; i < str.length(); i++)
         if (!isdigit(str[i]))
             return (0);
     return (1);
@@ -61,26 +62,38 @@ void PhoneBook::searchContact()
 
     for (int i = 0; i < count; i++)
     {
-        std::cout << std::setw(10) << i << "|" << std::setw(10) << formatField(contact[i].getFirstName()) << "|" << std::setw(10) << formatField(contact[i].getLastName()) << "|"<< std::setw(10) << formatField(contact[i].getNickname()) << "\n";
+        std::cout << std::setw(10) << i << "|"
+                  << std::setw(10) << formatField(contact[i].getFirstName()) << "|"
+                  << std::setw(10) << formatField(contact[i].getLastName()) << "|"
+                  << std::setw(10) << formatField(contact[i].getNickname()) << "\n";
     }
+
     int idx;
     while (1)
     {
         std::cout << "Enter the index of the contact to display: ";
         std::string input;
         std::getline(std::cin, input);
-        int  valid = 1;
-        for (size_t i = 0; i < input.length(); i++)
-            if (!isdigit(input[i]))
-                valid = 0;
 
-        if (!valid || input.empty())
+        bool valid = !input.empty();
+        for (size_t i = 0; i < input.length() && valid; i++)
+            if (!isdigit(input[i]))
+                valid = false;
+
+        if (!valid)
         {
             std::cout << "Invalid input! Index must be a number.\n";
             continue;
         }
+        std::stringstream ss(input);
+        ss >> idx;
 
-        idx = std::stoi(input);
+        if (ss.fail() || !ss.eof())
+        {
+            std::cout << "Invalid input! Conversion failed.\n";
+            continue;
+        }
+
         if (idx < 0 || idx >= count)
         {
             std::cout << "Invalid input! Index out of range.\n";
@@ -88,6 +101,7 @@ void PhoneBook::searchContact()
         }
         break;
     }
+
     contact[idx].displayContact();
 }
 

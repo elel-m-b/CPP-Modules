@@ -1,3 +1,4 @@
+#include "PhoneBook.hpp"
 #include "Contact.hpp"
 
 void Contact::setContact(std::string f, std::string l, std::string n, std::string phone, std::string secret)
