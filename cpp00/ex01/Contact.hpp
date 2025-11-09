@@ -24,4 +24,4 @@ class Contact
     std::string getSecret();
     void displayContact();
 };
-#endif 
+#endif

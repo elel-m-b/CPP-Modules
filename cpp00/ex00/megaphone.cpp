@@ -1,36 +1,33 @@
 #include <iostream>
-#include <string>
 #include <cctype>
 
-class Megaphone
+class test
 {
 public:
-    void convert_string(const std::string &str);
+    void change_args(std::string &arg);
 };
 
-void Megaphone::convert_string(const std::string &str)
+void test::change_args(std::string &arg)
 {
-    for (size_t i = 0; i < str.length(); i++)
-        std::cout << static_cast<char>(std::toupper(str[i]));
+    for (unsigned int  i = 0; i < arg.size(); i++)
+        arg[i] = std::toupper(arg[i]);
 }
+
 
 int main(int ac, char **av)
 {
-    if (ac < 2)
+    if (ac == 1)
     {
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
         return 0;
     }
-
-    Megaphone speaker;
-
+    test a;
+    std::string name;
     for (int i = 1; i < ac; i++)
     {
-        speaker.convert_string(av[i]);
-        if (i < ac - 1)
-            std::cout << " ";
+        name = av[i];  
+        a.change_args(name); 
+        std::cout << name << std::endl;
     }
-
-    std::cout << std::endl;
-    return 0;
 }
+

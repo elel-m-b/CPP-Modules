@@ -62,10 +62,7 @@ void PhoneBook::searchContact()
 
     for (int i = 0; i < count; i++)
     {
-        std::cout << std::setw(10) << i << "|"
-                  << std::setw(10) << formatField(contact[i].getFirstName()) << "|"
-                  << std::setw(10) << formatField(contact[i].getLastName()) << "|"
-                  << std::setw(10) << formatField(contact[i].getNickname()) << "\n";
+        std::cout << std::setw(10) << i << "|" << std::setw(10) << formatField(contact[i].getFirstName()) << "|" << std::setw(10) << formatField(contact[i].getLastName()) << "|" << std::setw(10) << formatField(contact[i].getNickname()) << "\n";
     }
 
     int idx;
