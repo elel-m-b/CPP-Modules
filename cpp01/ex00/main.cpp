@@ -1,32 +1,15 @@
-#include <iostream>
+#include "Zombie.hpp"
 
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
-class Zombie
+int main() 
 {
-    public:
-        void        announce(void)
-        {
-            std::cout <<  name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-        }
-        void    setName(std::string n)
-        {
-            name = n;
-        }
-    private:
-        std::string     name;
-};
+    Zombie* heapZombie = newZombie("Hassan");
+    heapZombie->announce();
+    delete heapZombie;
 
-Zombie* newZombie( std::string name )
-{
+    randomChump("Aymane");
 
-}
-
-void randomChump( std::string name )
-{
-
-}
-
-int main()
-{
-
+    return 0;
 }

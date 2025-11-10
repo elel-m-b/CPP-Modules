@@ -1,10 +1,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = $(wildcard *.cpp)
+SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = zombie
+NAME = megaphone
 
 all: $(NAME)
 
