@@ -1,15 +1,14 @@
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRC = $(wildcard *.cpp)
+NAME = ex01
+SRCS = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = zombie
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)

@@ -1,0 +1,18 @@
+#include "Zombie.hpp"
+
+
+Zombie *zombieHorde(int N, std::string name)
+{
+    Zombie *ptr = new Zombie[N];
+
+    for (int i = 0; i < N; i++)
+    {
+        ptr[i].setName(name);
+    }
+    return (ptr);
+}
+
+void Zombie::announce() 
+{
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
