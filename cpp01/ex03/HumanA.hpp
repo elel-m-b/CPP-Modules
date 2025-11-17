@@ -4,11 +4,12 @@
 #include <string>
 #include "Weapon.hpp"
 
-class HumanA {
-private:
+class HumanA 
+{
+    private:
     std::string name;
     Weapon& weapon; // reference: must be set at construction and cannot be null
-public:
+    public:
     HumanA(const std::string& name, Weapon& weapon);
     ~HumanA();
 

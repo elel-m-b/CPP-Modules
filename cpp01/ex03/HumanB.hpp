@@ -4,11 +4,12 @@
 #include <string>
 #include "Weapon.hpp"
 
-class HumanB {
-private:
+class HumanB 
+{
+    private:
     std::string name;
     Weapon* weapon; // pointer: may be null, can be set later
-public:
+    public:
     HumanB(const std::string& name);
     ~HumanB();
 

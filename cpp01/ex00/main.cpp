@@ -8,8 +8,6 @@ int main()
     Zombie* heapZombie = newZombie("Hassan");
     heapZombie->announce();
     delete heapZombie;
-
     randomChump("Aymane");
-
     return 0;
 }
