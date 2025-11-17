@@ -1,14 +1,15 @@
-NAME = ex00
-SRCS = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
-OBJS = $(SRCS:.cpp=.o)
-
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+SRCS = main.cpp Harl.cpp
+OBJS = $(SRCS:.cpp=.o)
+
+NAME = ex05
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

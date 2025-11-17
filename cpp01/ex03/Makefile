@@ -1,4 +1,4 @@
-NAME = ex01
+NAME = ex03
 SRCS = HumanA.cpp  HumanB.cpp  main.cpp  Weapon.cpp
 OBJS = $(SRCS:.cpp=.o)
 
