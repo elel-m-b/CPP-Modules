@@ -1,33 +1,23 @@
 #include <iostream>
-#include <cctype>
-
-class test
-{
-public:
-    void change_args(std::string &arg);
-};
-
-void test::change_args(std::string &arg)
-{
-    for (unsigned int  i = 0; i < arg.size(); i++)
-        arg[i] = std::toupper(arg[i]);
-}
+#include <string>
 
 
-int main(int ac, char **av)
+int main(int   ac, char **av)
 {
     if (ac == 1)
     {
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return 0;
+        return (0);
     }
-    test a;
-    std::string name;
-    for (int i = 1; i < ac; i++)
+    std::string         name;
+
+    for(int i = 1; i < ac; i++)
     {
-        name = av[i];  
-        a.change_args(name); 
+        name = av[i];
+        for (int j = 0; j < name.size(); j++)
+            name[j] = std::toupper(name[j]);
         std::cout << name << std::endl;
     }
+    return (0);
 }
 
