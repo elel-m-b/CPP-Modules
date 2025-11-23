@@ -42,8 +42,7 @@ public:
     // - refValue must be initialized here
     // - name is faster to init here
     // =================================================================
-    Example(int x, int y, int &ref, std::string n)
-        : a(x), b(y), constValue(999), refValue(ref), name(n)
+    Example(int x, int y, int &ref, std::string n) : a(x), b(y), constValue(999), refValue(ref), name(n)
     {
         // -----------------------------
         // Constructor body:

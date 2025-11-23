@@ -3,6 +3,8 @@
 #include <iomanip>
 #include <sstream>
 #include <limits>
+#include <cstdlib>
+
 
 class Contact
 {
@@ -111,8 +113,6 @@ void PhoneBook::addContact()
     index = (index + 1) % 8;
     if (count < 8) count++;
 }
-
-
 void PhoneBook::searchContact()
 {
     if (count == 0)
@@ -125,45 +125,54 @@ void PhoneBook::searchContact()
 
     for (int i = 0; i < count; i++)
     {
-        std::cout << std::setw(10) << i << "|" << std::setw(10) << formatField(contact[i].getFirstName()) << "|" << std::setw(10) << formatField(contact[i].getLastName()) << "|" << std::setw(10) << formatField(contact[i].getNickname()) << "\n";
+        std::cout << std::setw(10) << i << "|"
+                  << std::setw(10) << formatField(contact[i].getFirstName()) << "|"
+                  << std::setw(10) << formatField(contact[i].getLastName()) << "|"
+                  << std::setw(10) << formatField(contact[i].getNickname())
+                  << "\n";
     }
 
-    int idx;
-    while (1)
+    int idx = -1;
+    std::string input;
+
+    while (true)
     {
-        std::cout << "Enter the index of the contact to display: ";
-        std::string input;
+        std::cout << "Enter an index: ";
         std::getline(std::cin, input);
 
-        bool valid = !input.empty();
-        for (size_t i = 0; i < input.length() && valid; i++)
+        // 1️⃣ validate numeric input (C++98 style)
+        bool isNum = !input.empty();
+        for (size_t i = 0; i < input.length(); i++)
+        {
             if (!isdigit(input[i]))
-                valid = false;
+            {
+                isNum = false;
+                break;
+            }
+        }
 
-        if (!valid)
+        if (!isNum)
         {
             std::cout << "Invalid input! Index must be a number.\n";
             continue;
         }
-        std::stringstream ss(input);
-        ss >> idx;
 
-        if (ss.fail() || !ss.eof())
-        {
-            std::cout << "Invalid input! Conversion failed.\n";
-            continue;
-        }
+        // 2️⃣ atoi in C++98 (no std:: prefix!)
+        idx = atoi(input.c_str());
 
+        // 3️⃣ check bounds
         if (idx < 0 || idx >= count)
         {
             std::cout << "Invalid input! Index out of range.\n";
             continue;
         }
+
         break;
     }
 
     contact[idx].displayContact();
 }
+ 
 
 void PhoneBook::displayContact()
 {
