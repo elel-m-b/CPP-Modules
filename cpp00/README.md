@@ -1,15 +1,6 @@
-# C++ Streams Reference Guide
+<h1 align="center" > C++ Streams Reference Guide </h1>
 
 A comprehensive guide to understanding C++ I/O streams, their hierarchy, and internal mechanisms.
-
-## 📚 Table of Contents
-
-- [Stream Hierarchy](#stream-hierarchy)
-- [Core Stream Types](#core-stream-types)
-- [Stream Architecture](#stream-architecture)
-- [How std::cout Works Internally](#how-stdcout-works-internally)
-- [Code Examples](#code-examples)
-- [Best Practices](#best-practices)
 
 ## 🏗️ Stream Hierarchy
 
