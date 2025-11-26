@@ -18,9 +18,9 @@ std::string Contact::getSecret() { return darkestsecret; }
 
 void Contact::displayContact()
 {
-    std::cout << "First Name: " << firstName << "\n";
-    std::cout << "Last Name: " << lastName << "\n";
-    std::cout << "Nickname: " << nickname << "\n";
-    std::cout << "Phone: " << phoneN << "\n";
-    std::cout << "Secret: " << darkestsecret << "\n";
+    std::cout << "First Name: " << firstName << std::endl;
+    std::cout << "Last Name: " << lastName << std::endl;
+    std::cout << "Nickname: " << nickname << std::endl;
+    std::cout << "Phone: " << phoneN << std::endl;
+    std::cout << "Secret: " << darkestsecret << std::endl;
 }

@@ -14,9 +14,9 @@ int main(int   ac, char **av)
     for(int i = 1; i < ac; i++)
     {
         name = av[i];
-        for (int j = 0; j < name.size(); j++)
+        for (size_t j = 0; j < name.length(); j++)
             name[j] = std::toupper(name[j]);
-        std::cout << name << std::endl;
+        std::cout << name;
     }
     return (0);
 }

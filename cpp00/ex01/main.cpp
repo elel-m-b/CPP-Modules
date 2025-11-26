@@ -8,15 +8,13 @@ int main()
 
     while (1)
     {
-        std::cout << "Enter your cmd: ";
+        std::cout << "Enter your cmd:(ADD), (SEARCH), (EXIT): ";
         if (!std::getline(std::cin, command))
             break;
         if (command == "ADD")
             phone.addContact();
         else if (command == "SEARCH")
             phone.searchContact();
-        else if (command == "DISPLAY")
-            phone.displayContact();
         else if (command == "EXIT")
             break;
         else

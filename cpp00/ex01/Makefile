@@ -1,10 +1,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Contact.cpp main.cpp PhoneBook.cpp 
+SRCS = Contact.cpp main.cpp PhoneBook.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = contact
+NAME = ex01
 
 all: $(NAME)
 
@@ -18,3 +18,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY : fclean clean all re

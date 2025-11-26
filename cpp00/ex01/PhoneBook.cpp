@@ -1,7 +1,7 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-int PhoneBook::isNumber(const std::string &str)
+int PhoneBook::isNumber(const std::string str)
 {
     if (str.empty())
         return (0);
@@ -29,32 +29,37 @@ void PhoneBook::addContact()
     std::string first_name, last_name, nickname, phone, ds;
 
     std::cout << "Enter your first name: ";
-    std::getline(std::cin, first_name);
+    while (!std::getline(std::cin, first_name) || first_name.empty())
+        std::cout << "First name cannot be empty. Enter your first name: ";
+
     std::cout << "Enter your last name: ";
-    std::getline(std::cin, last_name);
+    while (!std::getline(std::cin, last_name) || last_name.empty())
+        std::cout << "Last name cannot be empty. Enter your last name: ";
+
     std::cout << "Enter your nickname: ";
-    std::getline(std::cin, nickname);
+    while (!std::getline(std::cin, nickname) || nickname.empty())
+        std::cout << "Nickname cannot be empty. Enter your nickname: ";
+
     std::cout << "Enter your phone number: ";
-    std::getline(std::cin, phone);
-    while (!isNumber(phone))
-    {
-        std::cout << "Invalid input! Phone number must contain only digits.\n";
-        std::cout << "Enter your phone number: ";
-        std::getline(std::cin, phone);
-    }
+    while (!std::getline(std::cin, phone) || phone.empty() || !isNumber(phone))
+        std::cout << "Phone number must be digits and not empty. Enter your phone number: ";
+
     std::cout << "Enter darkest secret: ";
-    std::getline(std::cin, ds);
+    while (!std::getline(std::cin, ds) || ds.empty())
+        std::cout << "Darkest secret cannot be empty. Enter your darkest secret: ";
+
     contact[index].setContact(first_name, last_name, nickname, phone, ds);
     index = (index + 1) % 8;
     if (count < 8) count++;
 }
 
 
+
 void PhoneBook::searchContact()
 {
     if (count == 0)
     {
-        std::cout << "PhoneBook is empty.\n";
+        std::cout << "PhoneBook is empty" << std::endl;
         return;
     }
 
@@ -62,51 +67,32 @@ void PhoneBook::searchContact()
 
     for (int i = 0; i < count; i++)
     {
-        std::cout << std::setw(10) << i << "|" << std::setw(10) << formatField(contact[i].getFirstName()) << "|" << std::setw(10) << formatField(contact[i].getLastName()) << "|" << std::setw(10) << formatField(contact[i].getNickname()) << "\n";
+        std::cout << std::setw(10) << i << "|"
+                  << std::setw(10) << formatField(contact[i].getFirstName()) << "|"
+                  << std::setw(10) << formatField(contact[i].getLastName()) << "|"
+                  << std::setw(10) << formatField(contact[i].getNickname())
+                  << std::endl;
     }
 
-    int idx;
+    int idx = -1;
+    std::string input;
+
     while (1)
     {
-        std::cout << "Enter the index of the contact to display: ";
-        std::string input;
-        std::getline(std::cin, input);
+        std::cout << "Enter an index: ";
+        if (!std::getline(std::cin, input))
+            return ;
 
-        bool valid = !input.empty();
-        for (size_t i = 0; i < input.length() && valid; i++)
-            if (!isdigit(input[i]))
-                valid = false;
-
-        if (!valid)
-        {
-            std::cout << "Invalid input! Index must be a number.\n";
-            continue;
-        }
         std::stringstream ss(input);
+
         ss >> idx;
-
-        if (ss.fail() || !ss.eof())
+        if (idx < 0 || idx >= count || !ss.eof())
         {
-            std::cout << "Invalid input! Conversion failed.\n";
-            continue;
-        }
-
-        if (idx < 0 || idx >= count)
-        {
-            std::cout << "Invalid input! Index out of range.\n";
+            std::cout << "Invalid input! " << std::endl;
             continue;
         }
         break;
     }
 
     contact[idx].displayContact();
-}
-
-void PhoneBook::displayContact()
-{
-    for (int i = 0; i < count; i++)
-    {
-        contact[i].displayContact();
-        std::cout << "------------------------\n";
-    }
 }

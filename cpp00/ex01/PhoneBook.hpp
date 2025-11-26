@@ -5,6 +5,7 @@
 #include <string>
 #include <iomanip>
 #include <limits>
+#include <cstdlib>
 
 class PhoneBook
 {
@@ -18,6 +19,6 @@ class PhoneBook
     void addContact();
     void searchContact();
     void displayContact();
-    int isNumber(const std::string &str);
+    int isNumber(const std::string str);
 };
 #endif
