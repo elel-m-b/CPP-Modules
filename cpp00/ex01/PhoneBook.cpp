@@ -28,87 +28,56 @@ void PhoneBook::addContact()
 {
     std::string first_name, last_name, nickname, phone, ds;
 
-    // First name
     std::cout << "Enter your first name: ";
-    while (true) {
-        if (!std::getline(std::cin, first_name)) {
-            if (std::cin.eof()) {
-                std::cout << "\nInput aborted.\n";
-                return; // Ctrl-D pressed
-            }
-            std::cin.clear();
-            continue;
-        }
+    while (1) 
+    {
+        if (!std::getline(std::cin, first_name))
+            return;
         if (!first_name.empty())
             break;
         std::cout << "First name cannot be empty. Enter your first name: ";
     }
 
-    // Last name
     std::cout << "Enter your last name: ";
-    while (true) {
-        if (!std::getline(std::cin, last_name)) {
-            if (std::cin.eof()) {
-                std::cout << "\nInput aborted.\n";
-                return;
-            }
-            std::cin.clear();
-            continue;
-        }
+    while (1) 
+    {
+        if (!std::getline(std::cin, last_name))
+            return;
         if (!last_name.empty())
             break;
         std::cout << "Last name cannot be empty. Enter your last name: ";
     }
 
-    // Nickname
     std::cout << "Enter your nickname: ";
-    while (true) {
-        if (!std::getline(std::cin, nickname)) {
-            if (std::cin.eof()) {
-                std::cout << "\nInput aborted.\n";
-                return;
-            }
-            std::cin.clear();
-            continue;
-        }
+    while (1) 
+    {
+        if (!std::getline(std::cin, nickname))
+            return;
         if (!nickname.empty())
             break;
         std::cout << "Nickname cannot be empty. Enter your nickname: ";
     }
 
-    // Phone number
     std::cout << "Enter your phone number: ";
-    while (true) {
-        if (!std::getline(std::cin, phone)) {
-            if (std::cin.eof()) {
-                std::cout << "\nInput aborted.\n";
-                return;
-            }
-            std::cin.clear();
-            continue;
-        }
+    while (1) 
+    {
+        if (!std::getline(std::cin, phone))
+            return;
         if (!phone.empty() && isNumber(phone))
             break;
         std::cout << "Phone number must be digits and not empty. Enter your phone number: ";
     }
 
-    // Darkest secret
     std::cout << "Enter darkest secret: ";
-    while (true) {
-        if (!std::getline(std::cin, ds)) {
-            if (std::cin.eof()) {
-                std::cout << "\nInput aborted.\n";
-                return;
-            }
-            std::cin.clear();
-            continue;
-        }
+    while (1) 
+    {
+        if (!std::getline(std::cin, ds))
+            return;
         if (!ds.empty())
             break;
         std::cout << "Darkest secret cannot be empty. Enter your darkest secret: ";
     }
 
-    // Save contact
     contact[index].setContact(first_name, last_name, nickname, phone, ds);
     index = (index + 1) % 8;
     if (count < 8) count++;
