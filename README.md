@@ -1,7 +1,4 @@
-<div align="center">
-<p style="font-size:50px; font-weight:bold;">
-⚔️ 42 C++ Modules ⚔️
-</p>
+<p1 align = "center" > ⚔️ 42 C++ Modules ⚔️ </p1>
 </div>
 
 <div align="center">
