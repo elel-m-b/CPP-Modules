@@ -9,19 +9,19 @@ class Weapon
     std::string type;
 
     public:
-    Weapon(std::string& initialType);
-    void setType(std::string& newType);
-    std::string& getType();
+    Weapon(const std::string& initialType);
+    void setType(const std::string& newType);
+    const std::string& getType();
 };
 
 class HumanA
 {
     private:
     std::string name;
-    Weapon& weapon; // reference because HumanA is always armed
+    Weapon& weapon;
 
     public:
-    HumanA(std::string& name, Weapon& weapon);
+    HumanA(const std::string& name, Weapon& weapon);
     void attack();
 };
 
@@ -29,41 +29,41 @@ class HumanB
 {
     private:
     std::string name;
-    Weapon* weapon; // pointer because HumanB may have no weapon initially
+    Weapon* weapon;
 
     public:
-    HumanB(std::string& name);
+    HumanB(const std::string& name);
     void setWeapon(Weapon& newWeapon);
     void attack();
 };
 
 // ---------------- IMPLEMENTATION ----------------
 
-Weapon::Weapon(std::string& initialType)
+Weapon::Weapon(const std::string& initialType)
 {
     type = initialType;
 }
 
-void Weapon::setType(std::string& newType)
-
+void Weapon::setType(const std::string& newType)
+{
     type = newType;
 }
 
-std::string& Weapon::getType() 
+const std::string& Weapon::getType()
 {
     return type;
 }
 
-HumanA::HumanA(std::string& name, Weapon& weapon) : name(name), weapon(weapon)
+HumanA::HumanA(const std::string& name, Weapon& weapon) : name(name), weapon(weapon)
 {
 }
 
-void HumanA::attack() 
+void HumanA::attack()
 {
     std::cout << name << " attacks with their " << weapon.getType() << std::endl;
 }
 
-HumanB::HumanB(std::string& name)
+HumanB::HumanB(const std::string& name)
     : name(name), weapon(NULL)
 {
 }
@@ -73,10 +73,10 @@ void HumanB::setWeapon(Weapon& newWeapon)
     weapon = &newWeapon;
 }
 
-void HumanB::attack() 
+void HumanB::attack()
 {
     if (weapon)
-        std::cout << name << " attacks with their "<< weapon->getType() << std::endl;
+        std::cout << name << " attacks with their " << weapon->getType() << std::endl;
     else
         std::cout << name << " has no weapon to attack with" << std::endl;
 }
@@ -100,5 +100,4 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
-    return 0;
 }
