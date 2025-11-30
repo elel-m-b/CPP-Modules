@@ -37,7 +37,6 @@ class HumanB
     void attack();
 };
 
-// ---------------- IMPLEMENTATION ----------------
 
 Weapon::Weapon(const std::string& initialType)
 {
@@ -81,7 +80,6 @@ void HumanB::attack()
         std::cout << name << " has no weapon to attack with" << std::endl;
 }
 
-// ---------------- MAIN ----------------
 
 int main()
 {
@@ -100,4 +98,5 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
+    {}
 }
