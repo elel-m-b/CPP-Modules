@@ -14,8 +14,14 @@ class       Harl
     void        complain(std::string level);
 };
 
+void        Harl::complain(std::string      level)
+{
+    std::string     levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    std::cout << levels[3];
+}
+
 int main()
 {
     Harl        c1;
-    std::string     levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
 }
