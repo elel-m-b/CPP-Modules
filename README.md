@@ -59,6 +59,7 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 <div align="center">
 
 ```mermaid
+```mermaid
 graph TD
     A[Module 00<br/>C++ Basics] --> B[Module 01<br/>Memory & References]
     B --> C[Module 02<br/>Polymorphism Intro]
@@ -69,18 +70,17 @@ graph TD
     G --> H[Module 07<br/>Templates]
     H --> I[Module 08<br/>STL]
     I --> J[Module 09<br/>STL Advanced]
-    
-    style A fill:#90EE90
-    style B fill:#90EE90
-    style C fill:#90EE90
-    style D fill:#FFD700
-    style E fill:#FFD700
-    style F fill:#FF6347
-    style G fill:#FF6347
-    style H fill:#FF6347
-    style I fill:#FF6347
-    style J fill:#FF6347
-```
+
+    style A fill:#ffffff,stroke:#000000
+    style B fill:#ffffff,stroke:#000000
+    style C fill:#ffffff,stroke:#000000
+    style D fill:#ffffff,stroke:#000000
+    style E fill:#ffffff,stroke:#000000
+    style F fill:#ffffff,stroke:#000000
+    style G fill:#ffffff,stroke:#000000
+    style H fill:#ffffff,stroke:#000000
+    style I fill:#ffffff,stroke:#000000
+    style J fill:#ffffff,stroke:#000000
 
 </div>
 
