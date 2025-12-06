@@ -64,13 +64,6 @@ std::string str = "Safe!";                              // Type-safe
 - ✅ Exception handling and templates
 - ✅ Modern C++ best practices
 
----
-
-## 🗺️ Modules Overview
-
-<div align="center">
-
-```mermaid
 graph TD
     classDef default fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
     
@@ -95,12 +88,6 @@ graph TD
     H --> I
     I --> J
     
-    %% Apply the same style to all
-    class A,B,C,D,E,F,G,H,I,J default
-
-</div>
-
----
 
 ## 🟢 Foundation Level (Modules 00-02)
 
