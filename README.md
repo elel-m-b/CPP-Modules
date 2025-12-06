@@ -1,5 +1,4 @@
-# ⚔️ 42 C++ Modules ⚔️
-
+<h1 div="align="center" ></h1>
 <div align="center">
   <img 
     src="https://github.com/user-attachments/assets/74f39eb1-8c7e-4faa-887f-9a33742fe1dc"
@@ -27,9 +26,9 @@
 
 - [About](#-about)
 - [Modules Overview](#️-modules-overview)
-  - [Foundation Level](#-foundation-level-modules-00-02)
-  - [Intermediate Level](#-intermediate-level-modules-03-04)
-  - [Advanced Level](#-advanced-level-modules-05-09)
+- [Foundation Level](#-foundation-level-modules-00-02)
+- [Intermediate Level](#-intermediate-level-modules-03-04)
+- [Advanced Level](#-advanced-level-modules-05-09)
 - [Quick Start](#-quick-start)
 - [Learning Path](#-learning-path)
 - [Key Concepts](#-key-concepts)
@@ -44,18 +43,7 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 
 > 🎯 **Goal**: Not just to learn C++ syntax, but to truly understand the *why* and *how* behind Object-Oriented Programming, memory management, and modern C++ practices.
 
-### Why C++ Modules?
-
-```cpp
-// Before C++ Modules
-void* ptr = malloc(sizeof(int));  // C style - error prone
-strcpy(dest, src);                // Unsafe
-
-// After C++ Modules
-std::unique_ptr<int> ptr = std::make_unique<int>(42);  // RAII
-std::string str = "Safe!";                              // Type-safe
-```
-
+<div align="center" >
 **What You'll Learn:**
 - ✅ Object-Oriented Programming fundamentals
 - ✅ Memory management and RAII principles
@@ -63,7 +51,7 @@ std::string str = "Safe!";                              // Type-safe
 - ✅ STL containers and algorithms
 - ✅ Exception handling and templates
 - ✅ Modern C++ best practices
-
+</div>
 ---
 
 ## 🗺️ Modules Overview
@@ -98,8 +86,8 @@ graph TD
 
 ---
 
-## 🟢 Foundation Level (Modules 00-02)
-
+<h2 div=align="center" > 🟢 Foundation Level (Modules 00-02) </h2>
+<div align ="center" >
 <details>
 <summary>📦 <strong>Module 00 - C++ Basics</strong></summary>
 
@@ -275,7 +263,7 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 - ✅ Learn fixed-point arithmetic
 
 </details>
-
+</div>
 ---
 
 ## 🟡 Intermediate Level (Modules 03-04)
