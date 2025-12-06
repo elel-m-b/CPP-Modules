@@ -15,114 +15,127 @@
 ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**A comprehensive collection of exercises designed to master the fundamentals of C++ programming**
+**A comprehensive collection of exercises designed to master C++ programming fundamentals**
 
 [Quick Start](#-quick-start) • [Modules](#-modules-overview) • [Resources](#-resources) • [Contributing](#-contributing)
 
-</div>
-
 ---
+
+</div>
 
 ## 📋 Table of Contents
 
-- [About](#-about)
-- [Modules Overview](#️-modules-overview)
-  - [Foundation Level](#-foundation-level-modules-00-02)
-  - [Intermediate Level](#-intermediate-level-modules-03-04)
-  - [Advanced Level](#-advanced-level-modules-05-09)
-- [Quick Start](#-quick-start)
-- [Learning Path](#-learning-path)
-- [Key Concepts](#-key-concepts)
-- [Resources](#-resources)
-- [Contributing](#-contributing)
+<div align="center">
+
+[About](#-about) • 
+[Modules Overview](#-modules-overview) • 
+[Quick Start](#-quick-start) • 
+[Learning Path](#-learning-path) • 
+[Key Concepts](#-key-concepts) • 
+[Resources](#-resources) • 
+[Study Tips](#-study-tips) • 
+[Contributing](#-contributing)
+
+</div>
 
 ---
 
 ## 🎯 About
 
-The **42 C++ Modules** represent a carefully curated learning path through the intricacies of C++ programming. Following the renowned **42 School curriculum**, this project takes you on a journey from basic syntax to advanced programming paradigms.
+<div align="center">
 
-> 🎯 **Goal**: Not just to learn C++ syntax, but to truly understand the *why* and *how* behind Object-Oriented Programming, memory management, and modern C++ practices.
+The **42 C++ Modules** represent a carefully curated learning path through C++ programming fundamentals. Following the renowned **42 School curriculum**, this project takes you from basic syntax to advanced programming paradigms.
 
-### Why C++ Modules?
+</div>
 
-```cpp
-// Before C++ Modules
-void* ptr = malloc(sizeof(int));  // C style - error prone
-strcpy(dest, src);                // Unsafe
-
-// After C++ Modules
-std::unique_ptr<int> ptr = std::make_unique<int>(42);  // RAII
-std::string str = "Safe!";                              // Type-safe
-```
-
-**What You'll Learn:**
-- ✅ Object-Oriented Programming fundamentals
-- ✅ Memory management and RAII principles
-- ✅ Polymorphism and inheritance
-- ✅ STL containers and algorithms
-- ✅ Exception handling and templates
-- ✅ Modern C++ best practices
-
----
-
-## 🗺️ Modules Overview
+### Goal
 
 <div align="center">
 
-```mermaid
-graph TD
-    A[Module 00<br/>C++ Basics] --> B[Module 01<br/>Memory & References]
-    B --> C[Module 02<br/>Polymorphism Intro]
-    C --> D[Module 03<br/>Inheritance]
-    D --> E[Module 04<br/>Abstract Classes]
-    E --> F[Module 05<br/>Exceptions]
-    F --> G[Module 06<br/>Casts]
-    G --> H[Module 07<br/>Templates]
-    H --> I[Module 08<br/>STL]
-    I --> J[Module 09<br/>STL Advanced]
-    
-    style A fill:#90EE90
-    style B fill:#90EE90
-    style C fill:#90EE90
-    style D fill:#FFD700
-    style E fill:#FFD700
-    style F fill:#FF6347
-    style G fill:#FF6347
-    style H fill:#FF6347
-    style I fill:#FF6347
-    style J fill:#FF6347
+> *Not just to learn C++ syntax, but to truly understand the why and how behind Object-Oriented Programming, memory management, and modern C++ practices.*
+
+</div>
+
+### What You'll Learn
+
+<div align="center">
+
 ```
+Before C++ Modules                    After C++ Modules
+━━━━━━━━━━━━━━━━━━━                   ━━━━━━━━━━━━━━━━━━
+void* ptr = malloc(...);    →    std::unique_ptr<int> ptr;
+strcpy(dest, src);          →    std::string str = "Safe!";
+```
+
+**Core Skills**
+
+Object-Oriented Programming • Memory Management • RAII Principles  
+Polymorphism & Inheritance • STL Containers • Exception Handling  
+Templates • Modern C++ Practices
 
 </div>
 
 ---
 
-## 🟢 Foundation Level (Modules 00-02)
+## 🗺 Modules Overview
+
+<div align="center">
+
+### Learning Progression
+
+```
+Module 00: C++ Basics
+    ↓
+Module 01: Memory & References
+    ↓
+Module 02: Polymorphism Introduction
+    ↓
+Module 03: Inheritance
+    ↓
+Module 04: Abstract Classes & Interfaces
+    ↓
+Module 05: Exceptions
+    ↓
+Module 06: Type Casting
+    ↓
+Module 07: Templates
+    ↓
+Module 08: STL Containers
+    ↓
+Module 09: Advanced STL
+```
+
+### Difficulty Levels
+
+**Foundation** (Modules 00-02) • **Intermediate** (Modules 03-04) • **Advanced** (Modules 05-09)
+
+</div>
+
+---
+
+## 📦 Module 00 - C++ Basics
+
+<div align="center">
 
 <details>
-<summary>📦 <strong>Module 00 - C++ Basics</strong></summary>
+<summary><strong>Click to expand Module 00</strong></summary>
 
-### Topics Covered:
-- Namespaces
-- Classes and objects
-- Member functions
-- Stdio streams
-- Initialization lists
-- Static members
-- Const members
+### Topics Covered
 
-### Key Exercises:
+Namespaces • Classes & Objects • Member Functions  
+Stdio Streams • Initialization Lists • Static Members • Const Members
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
+|:--------:|:------------|:-------------|
 | **ex00** | Megaphone | String manipulation, toupper |
 | **ex01** | PhoneBook | Classes, arrays, encapsulation |
 | **ex02** | Account | Static members, timestamps |
 
-### Example Code:
+### Example: PhoneBook Class
+
 ```cpp
-// ex01: PhoneBook class structure
 class PhoneBook {
 private:
     Contact contacts[8];
@@ -137,27 +150,35 @@ public:
 };
 ```
 
-### Learning Outcomes:
-- ✅ Understand class structure and encapsulation
-- ✅ Master basic I/O operations
-- ✅ Learn about member functions and data hiding
+### Learning Outcomes
+✓ Class structure and encapsulation  
+✓ Basic I/O operations  
+✓ Member functions and data hiding
+
+**Time Estimate:** 1 week • **Difficulty:** ⭐
 
 </details>
 
+</div>
+
+---
+
+## 🧠 Module 01 - Memory & References
+
+<div align="center">
+
 <details>
-<summary>🧠 <strong>Module 01 - Memory & References</strong></summary>
+<summary><strong>Click to expand Module 01</strong></summary>
 
-### Topics Covered:
-- Memory allocation (new/delete)
-- Pointers vs references
-- Switch statements
-- File streams
-- String manipulation
+### Topics Covered
 
-### Key Exercises:
+Memory Allocation (new/delete) • Pointers vs References  
+Switch Statements • File Streams • String Manipulation
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
+|:--------:|:------------|:-------------|
 | **ex00** | BraiiiiinnzZ | Pointers, references |
 | **ex01** | Moar brainz! | Dynamic allocation |
 | **ex02** | HI THIS IS BRAIN | Memory addresses |
@@ -166,9 +187,9 @@ public:
 | **ex05** | Harl 2.0 | Pointers to member functions |
 | **ex06** | Harl filter | Switch statements |
 
-### Example Code:
+### Example: Weapon Class with References
+
 ```cpp
-// ex03: Weapon class with reference
 class Weapon {
 private:
     std::string type;
@@ -182,7 +203,7 @@ public:
 class HumanB {
 private:
     std::string name;
-    Weapon*     weapon;  // Pointer (optional weapon)
+    Weapon*     weapon;  // Pointer for optional weapon
 
 public:
     HumanB(const std::string& name);
@@ -191,32 +212,42 @@ public:
 };
 ```
 
-### Learning Outcomes:
-- ✅ Understand pointer vs reference differences
-- ✅ Master dynamic memory management
-- ✅ Learn file I/O operations
+### Learning Outcomes
+✓ Pointer vs reference differences  
+✓ Dynamic memory management  
+✓ File I/O operations
+
+**Time Estimate:** 1 week • **Difficulty:** ⭐⭐
 
 </details>
 
+</div>
+
+---
+
+## ⚡ Module 02 - Polymorphism Introduction
+
+<div align="center">
+
 <details>
-<summary>⚡ <strong>Module 02 - Polymorphism Introduction</strong></summary>
+<summary><strong>Click to expand Module 02</strong></summary>
 
-### Topics Covered:
-- Ad-hoc polymorphism
-- Operator overloading
-- Orthodox Canonical Form
-- Fixed-point numbers
+### Topics Covered
 
-### Key Exercises:
+Ad-hoc Polymorphism • Operator Overloading  
+Orthodox Canonical Form • Fixed-point Numbers
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
+|:--------:|:------------|:-------------|
 | **ex00** | First Orthodox Class | Canonical form basics |
 | **ex01** | Fixed Point | Operator overloading |
 | **ex02** | BSP | Binary Space Partitioning |
 | **ex03** | Point and BSP | Advanced operators |
 
-### Orthodox Canonical Form:
+### The Orthodox Canonical Form
+
 ```cpp
 class Fixed {
 private:
@@ -224,17 +255,15 @@ private:
     static const int _fractionalBits = 8;
 
 public:
-    // Orthodox Canonical Form
+    // Orthodox Canonical Form (The Big Four)
     Fixed();                              // Default constructor
     Fixed(const Fixed& other);            // Copy constructor
     Fixed& operator=(const Fixed& other); // Copy assignment operator
     ~Fixed();                             // Destructor
 
-    // Additional constructors
+    // Conversions
     Fixed(const int value);
     Fixed(const float value);
-
-    // Conversion functions
     float toFloat() const;
     int   toInt() const;
 
@@ -252,67 +281,70 @@ public:
     Fixed operator*(const Fixed& other) const;
     Fixed operator/(const Fixed& other) const;
 
-    // Increment/Decrement operators
+    // Increment/Decrement
     Fixed& operator++();    // Pre-increment
     Fixed  operator++(int); // Post-increment
     Fixed& operator--();    // Pre-decrement
     Fixed  operator--(int); // Post-decrement
 
-    // Static member functions
+    // Static functions
     static Fixed& min(Fixed& a, Fixed& b);
     static const Fixed& min(const Fixed& a, const Fixed& b);
     static Fixed& max(Fixed& a, Fixed& b);
     static const Fixed& max(const Fixed& a, const Fixed& b);
 };
 
-// Stream insertion operator
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 ```
 
-### Learning Outcomes:
-- ✅ Master the Orthodox Canonical Form
-- ✅ Understand operator overloading
-- ✅ Learn fixed-point arithmetic
+### Learning Outcomes
+✓ Orthodox Canonical Form mastery  
+✓ Operator overloading  
+✓ Fixed-point arithmetic
+
+**Time Estimate:** 1-2 weeks • **Difficulty:** ⭐⭐⭐
 
 </details>
 
+</div>
+
 ---
 
-## 🟡 Intermediate Level (Modules 03-04)
+## 🔗 Module 03 - Inheritance
+
+<div align="center">
 
 <details>
-<summary>🔗 <strong>Module 03 - Inheritance</strong></summary>
+<summary><strong>Click to expand Module 03</strong></summary>
 
-### Topics Covered:
-- Class inheritance
-- Protected access specifier
-- Virtual functions
-- Multiple inheritance (diamond problem)
+### Topics Covered
 
-### Key Exercises:
+Class Inheritance • Protected Access Specifier  
+Virtual Functions • Diamond Problem
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
+|:--------:|:------------|:-------------|
 | **ex00** | ClapTrap | Base class creation |
 | **ex01** | ScavTrap | Single inheritance |
 | **ex02** | FragTrap | Multiple derived classes |
-| **ex03** | DiamondTrap | Diamond inheritance |
+| **ex03** | DiamondTrap | Diamond inheritance problem |
 
-### Inheritance Hierarchy:
-```mermaid
-graph TD
-    A[ClapTrap<br/>Base Class] --> B[ScavTrap]
-    A --> C[FragTrap]
-    B --> D[DiamondTrap]
-    C --> D
-    
-    style A fill:#90EE90
-    style B fill:#FFD700
-    style C fill:#FFD700
-    style D fill:#FF6347
+### Inheritance Hierarchy
+
+```
+           ClapTrap (Base)
+              /   \
+             /     \
+        ScavTrap  FragTrap
+             \     /
+              \   /
+           DiamondTrap
 ```
 
-### Example Code:
+### Example Code
+
 ```cpp
 // Base class
 class ClapTrap {
@@ -341,7 +373,7 @@ public:
     void guardGate();
 };
 
-// Diamond inheritance
+// Diamond inheritance solution
 class DiamondTrap : public ScavTrap, public FragTrap {
 private:
     std::string _name;
@@ -354,35 +386,44 @@ public:
 };
 ```
 
-### Learning Outcomes:
-- ✅ Understand inheritance hierarchies
-- ✅ Learn virtual functions and polymorphism
-- ✅ Solve the diamond problem with virtual inheritance
+### Learning Outcomes
+✓ Inheritance hierarchies  
+✓ Virtual functions and polymorphism  
+✓ Diamond problem resolution
+
+**Time Estimate:** 1 week • **Difficulty:** ⭐⭐
 
 </details>
 
+</div>
+
+---
+
+## 🎭 Module 04 - Abstract Classes & Interfaces
+
+<div align="center">
+
 <details>
-<summary>🎭 <strong>Module 04 - Abstract Classes & Interfaces</strong></summary>
+<summary><strong>Click to expand Module 04</strong></summary>
 
-### Topics Covered:
-- Subtype polymorphism
-- Abstract classes
-- Pure virtual functions
-- Interfaces
-- Deep copy vs shallow copy
+### Topics Covered
 
-### Key Exercises:
+Subtype Polymorphism • Abstract Classes  
+Pure Virtual Functions • Interfaces • Deep vs Shallow Copy
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
+|:--------:|:------------|:-------------|
 | **ex00** | Polymorphism | Virtual functions |
-| **ex01** | Brain | Deep copy |
+| **ex01** | Brain | Deep copy implementation |
 | **ex02** | Abstract class | Pure virtual functions |
-| **ex03** | Interface & recap | Interface design |
+| **ex03** | Interface & recap | Interface design patterns |
 
-### Example Code:
+### Example: Abstract Class
+
 ```cpp
-// Abstract base class (Interface)
+// Abstract base class
 class Animal {
 protected:
     std::string _type;
@@ -391,24 +432,22 @@ public:
     Animal();
     virtual ~Animal();
     
-    // Pure virtual function (makes class abstract)
-    virtual void makeSound() const = 0;
-    
+    virtual void makeSound() const = 0;  // Pure virtual
     std::string getType() const;
 };
 
-// Concrete derived class
+// Concrete implementation
 class Dog : public Animal {
 private:
-    Brain* _brain;  // Deep copy needed!
+    Brain* _brain;  // Requires deep copy!
 
 public:
     Dog();
-    Dog(const Dog& other);
-    Dog& operator=(const Dog& other);
+    Dog(const Dog& other);              // Deep copy
+    Dog& operator=(const Dog& other);   // Deep copy
     ~Dog();
     
-    void makeSound() const; // Implementation required
+    void makeSound() const;
 };
 
 // Interface example
@@ -422,37 +461,55 @@ public:
 };
 ```
 
-### Learning Outcomes:
-- ✅ Master abstract classes and interfaces
-- ✅ Understand deep vs shallow copy
-- ✅ Learn polymorphic behavior
+### Deep Copy vs Shallow Copy
+
+```cpp
+// Shallow copy (default) - BAD!
+Dog a;
+Dog b = a;  // Both point to same Brain*
+
+// Deep copy (implemented) - GOOD!
+Dog::Dog(const Dog& other) {
+    _brain = new Brain(*other._brain);  // New allocation
+}
+```
+
+### Learning Outcomes
+✓ Abstract classes and interfaces  
+✓ Deep vs shallow copy understanding  
+✓ Polymorphic behavior mastery
+
+**Time Estimate:** 1-2 weeks • **Difficulty:** ⭐⭐⭐
 
 </details>
 
+</div>
+
 ---
 
-## 🔴 Advanced Level (Modules 05-09)
+## 🚨 Module 05 - Exceptions
+
+<div align="center">
 
 <details>
-<summary>🚨 <strong>Module 05 - Exceptions</strong></summary>
+<summary><strong>Click to expand Module 05</strong></summary>
 
-### Topics Covered:
-- Try/catch blocks
-- Exception classes
-- Exception hierarchy
-- Stack unwinding
-- RAII and exceptions
+### Topics Covered
 
-### Key Exercises:
+Try/Catch Blocks • Exception Classes  
+Exception Hierarchy • Stack Unwinding • RAII with Exceptions
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
-| **ex00** | Bureaucrat | Basic exceptions |
-| **ex01** | Form | Exception in classes |
+|:--------:|:------------|:-------------|
+| **ex00** | Bureaucrat | Basic exception handling |
+| **ex01** | Form | Exceptions in classes |
 | **ex02** | Abstract forms | Inheritance + exceptions |
 | **ex03** | Intern | Factory pattern with exceptions |
 
-### Example Code:
+### Example: Custom Exceptions
+
 ```cpp
 class Bureaucrat {
 private:
@@ -463,12 +520,16 @@ public:
     // Nested exception classes
     class GradeTooHighException : public std::exception {
     public:
-        virtual const char* what() const throw();
+        virtual const char* what() const throw() {
+            return "Grade is too high!";
+        }
     };
 
     class GradeTooLowException : public std::exception {
     public:
-        virtual const char* what() const throw();
+        virtual const char* what() const throw() {
+            return "Grade is too low!";
+        }
     };
 
     Bureaucrat(const std::string& name, int grade);
@@ -480,60 +541,67 @@ public:
     void executeForm(Form const& form);
 };
 
-// Usage example
+// Usage
 try {
-    Bureaucrat bob("Bob", 0);  // Too high!
+    Bureaucrat bob("Bob", 0);  // Throws GradeTooHighException
 } catch (const Bureaucrat::GradeTooHighException& e) {
     std::cerr << "Error: " << e.what() << std::endl;
+} catch (const std::exception& e) {
+    std::cerr << "Unknown error: " << e.what() << std::endl;
 }
 ```
 
-### Learning Outcomes:
-- ✅ Master exception handling
-- ✅ Create custom exception classes
-- ✅ Understand exception safety
+### Learning Outcomes
+✓ Exception handling mastery  
+✓ Custom exception classes  
+✓ Exception safety principles
+
+**Time Estimate:** 1 week • **Difficulty:** ⭐⭐⭐
 
 </details>
 
+</div>
+
+---
+
+## 🎯 Module 06 - Type Casting
+
+<div align="center">
+
 <details>
-<summary>🎯 <strong>Module 06 - Type Casting</strong></summary>
+<summary><strong>Click to expand Module 06</strong></summary>
 
-### Topics Covered:
-- Static cast
-- Dynamic cast
-- Const cast
-- Reinterpret cast
-- Type identification
+### Topics Covered
 
-### Key Exercises:
+Static Cast • Dynamic Cast  
+Const Cast • Reinterpret Cast • Type Identification
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
-| **ex00** | Scalar conversion | Static cast |
-| **ex01** | Serialization | Reinterpret cast |
-| **ex02** | Type identification | Dynamic cast |
+|:--------:|:------------|:-------------|
+| **ex00** | Scalar conversion | static_cast usage |
+| **ex01** | Serialization | reinterpret_cast usage |
+| **ex02** | Type identification | dynamic_cast for RTTI |
 
-### Cast Types Comparison:
+### Cast Types Comparison
 
-| Cast Type | Use Case | Safety | Example |
-|-----------|----------|--------|---------|
-| `static_cast` | Compile-time conversions | Medium | `static_cast<int>(3.14)` |
-| `dynamic_cast` | Runtime polymorphic casting | High | `dynamic_cast<Derived*>(base)` |
-| `const_cast` | Remove const qualifier | Low | `const_cast<char*>(str)` |
-| `reinterpret_cast` | Low-level reinterpretation | Very Low | `reinterpret_cast<uintptr_t>(ptr)` |
+| Cast Type | Use Case | Safety Level |
+|:---------:|:---------|:------------:|
+| `static_cast` | Compile-time conversions | Medium |
+| `dynamic_cast` | Runtime polymorphic casting | High |
+| `const_cast` | Remove const qualifier | Low |
+| `reinterpret_cast` | Low-level reinterpretation | Very Low |
 
-### Example Code:
+### Example: Type Identification
+
 ```cpp
-// ex02: Type identification
-class Base {
-public:
-    virtual ~Base() {}
-};
-
+class Base { public: virtual ~Base() {} };
 class A : public Base {};
 class B : public Base {};
 class C : public Base {};
 
+// With pointers
 void identify(Base* p) {
     if (dynamic_cast<A*>(p))
         std::cout << "A" << std::endl;
@@ -543,6 +611,7 @@ void identify(Base* p) {
         std::cout << "C" << std::endl;
 }
 
+// With references (exception-based)
 void identify(Base& p) {
     try {
         (void)dynamic_cast<A&>(p);
@@ -560,33 +629,42 @@ void identify(Base& p) {
 }
 ```
 
-### Learning Outcomes:
-- ✅ Understand different cast types
-- ✅ Know when to use each cast
-- ✅ Master type identification
+### Learning Outcomes
+✓ Different cast types understanding  
+✓ Appropriate cast selection  
+✓ RTTI (Runtime Type Information)
+
+**Time Estimate:** 1 week • **Difficulty:** ⭐⭐
 
 </details>
 
+</div>
+
+---
+
+## 📐 Module 07 - Templates
+
+<div align="center">
+
 <details>
-<summary>📐 <strong>Module 07 - Templates</strong></summary>
+<summary><strong>Click to expand Module 07</strong></summary>
 
-### Topics Covered:
-- Function templates
-- Class templates
-- Template specialization
-- Template instantiation
+### Topics Covered
 
-### Key Exercises:
+Function Templates • Class Templates  
+Template Specialization • Template Instantiation
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
+|:--------:|:------------|:-------------|
 | **ex00** | Start with templates | Function templates |
 | **ex01** | Iter | Template iteration |
-| **ex02** | Array | Class templates |
+| **ex02** | Array | Class template implementation |
 
-### Example Code:
+### Example: Function Templates
+
 ```cpp
-// Function template
 template <typename T>
 void swap(T& a, T& b) {
     T temp = a;
@@ -603,8 +681,11 @@ template <typename T>
 T const& max(T const& a, T const& b) {
     return (a > b) ? a : b;
 }
+```
 
-// Class template
+### Example: Class Template
+
+```cpp
 template <typename T>
 class Array {
 private:
@@ -620,12 +701,13 @@ public:
 
     T& operator[](unsigned int index);
     const T& operator[](unsigned int index) const;
-    
     unsigned int size() const;
 
     class OutOfBoundsException : public std::exception {
     public:
-        virtual const char* what() const throw();
+        virtual const char* what() const throw() {
+            return "Index out of bounds!";
+        }
     };
 };
 
@@ -634,39 +716,44 @@ Array<int> numbers(5);
 Array<std::string> strings(3);
 ```
 
-### Learning Outcomes:
-- ✅ Master function and class templates
-- ✅ Understand template instantiation
-- ✅ Learn generic programming
+### Learning Outcomes
+✓ Function and class templates  
+✓ Template instantiation  
+✓ Generic programming principles
+
+**Time Estimate:** 1 week • **Difficulty:** ⭐⭐⭐⭐
 
 </details>
 
+</div>
+
+---
+
+## 📚 Module 08 - STL Containers
+
+<div align="center">
+
 <details>
-<summary>📚 <strong>Module 08 - STL Containers</strong></summary>
+<summary><strong>Click to expand Module 08</strong></summary>
 
-### Topics Covered:
-- STL containers (vector, list, deque, stack)
-- Iterators
-- Algorithms
-- Container adapters
+### Topics Covered
 
-### Key Exercises:
+STL Containers (vector, list, stack, deque)  
+Iterators • Algorithms • Container Adapters
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
-| **ex00** | Easy find | Algorithm usage |
+|:--------:|:------------|:-------------|
+| **ex00** | Easy find | STL algorithm usage |
 | **ex01** | Span | Container manipulation |
-| **ex02** | Mutated abomination | Stack container |
+| **ex02** | Mutated abomination | Stack container extension |
 
-### STL Containers Overview:
+### Example: easyfind
 
 ```cpp
-#include <vector>
-#include <list>
-#include <stack>
 #include <algorithm>
 
-// ex00: Finding elements
 template <typename T>
 typename T::iterator easyfind(T& container, int value) {
     typename T::iterator it = std::find(container.begin(), 
@@ -676,8 +763,14 @@ typename T::iterator easyfind(T& container, int value) {
         throw std::exception();
     return it;
 }
+```
 
-// ex01: Span class
+### Example: Span Class
+
+```cpp
+#include <vector>
+#include <algorithm>
+
 class Span {
 private:
     unsigned int       _maxSize;
@@ -693,69 +786,75 @@ public:
     int shortestSpan() const;
     int longestSpan() const;
 };
-
-// ex02: Stack-based operations
-template <typename T>
-class MutantStack : public std::stack<T> {
-public:
-    typedef typename std::stack<T>::container_type::iterator iterator;
-    
-    iterator begin() { return this->c.begin(); }
-    iterator end() { return this->c.end(); }
-};
 ```
 
-### Common STL Algorithms:
+### Common STL Algorithms
+
 ```cpp
-std::find()      // Find element
-std::sort()      // Sort container
-std::count()     // Count elements
-std::copy()      // Copy elements
-std::for_each()  // Apply function to each
-std::transform() // Transform elements
-std::accumulate()// Sum/accumulate values
+std::find()        // Find element in range
+std::sort()        // Sort elements
+std::count()       // Count occurrences
+std::copy()        // Copy elements
+std::for_each()    // Apply function to range
+std::transform()   // Transform elements
+std::accumulate()  // Accumulate values
 ```
 
-### Learning Outcomes:
-- ✅ Master STL containers
-- ✅ Understand iterators
-- ✅ Use STL algorithms effectively
+### Learning Outcomes
+✓ STL containers mastery  
+✓ Iterator usage  
+✓ STL algorithms proficiency
+
+**Time Estimate:** 1-2 weeks • **Difficulty:** ⭐⭐⭐
 
 </details>
 
+</div>
+
+---
+
+## 🎓 Module 09 - Advanced STL
+
+<div align="center">
+
 <details>
-<summary>🎓 <strong>Module 09 - Advanced STL</strong></summary>
+<summary><strong>Click to expand Module 09</strong></summary>
 
-### Topics Covered:
-- STL algorithms (advanced)
-- Function objects (functors)
-- Predicates
-- Container performance
-- Custom comparators
+### Topics Covered
 
-### Key Exercises:
+Advanced STL Algorithms • Function Objects (Functors)  
+Predicates • Container Performance • Custom Comparators
+
+### Exercises
 
 | Exercise | Description | Key Concepts |
-|----------|-------------|--------------|
-| **ex00** | Bitcoin Exchange | Map container |
-| **ex01** | RPN Calculator | Stack operations |
-| **ex02** | PmergeMe | Sorting algorithms |
+|:--------:|:------------|:-------------|
+| **ex00** | Bitcoin Exchange | std::map usage |
+| **ex01** | RPN Calculator | Stack-based algorithm |
+| **ex02** | PmergeMe | Merge-insertion sort, performance |
 
-### Example Code:
+### Example: Bitcoin Exchange
+
 ```cpp
-// ex00: Bitcoin Exchange using std::map
+#include <map>
+#include <string>
+
 class BitcoinExchange {
 private:
     std::map<std::string, double> _database;
 
 public:
     BitcoinExchange(const std::string& filename);
-    
     double getRate(const std::string& date) const;
     void processInput(const std::string& filename);
 };
+```
 
-// ex01: RPN Calculator using std::stack
+### Example: RPN Calculator
+
+```cpp
+#include <stack>
+
 class RPN {
 private:
     std::stack<double> _stack;
@@ -767,65 +866,57 @@ private:
     bool isOperator(char c) const;
     void performOperation(char op);
 };
-
-// ex02: Performance comparison
-class PmergeMe {
-private:
-    std::vector<int> _vector;
-    std::deque<int>  _deque;
-
-public:
-    void sort(const std::string& input);
-    
-private:
-    void fordJohnsonSort(std::vector<int>& container);
-    void fordJohnsonSort(std::deque<int>& container);
-    
-    template <typename Container>
-    void measureTime(Container& container, const std::string& name);
-};
 ```
 
-### Performance Considerations:
+### Container Performance
 
-| Container | Access | Insertion | Deletion | Use Case |
-|-----------|--------|-----------|----------|----------|
-| `vector` | O(1) | O(n) | O(n) | Random access, append |
-| `deque` | O(1) | O(1) both ends | O(n) | Both ends operations |
-| `list` | O(n) | O(1) | O(1) | Frequent insertions |
-| `map` | O(log n) | O(log n) | O(log n) | Key-value pairs |
+| Container | Access | Insertion | Deletion | Best Use Case |
+|:---------:|:------:|:---------:|:--------:|:--------------|
+| `vector` | O(1) | O(n) | O(n) | Random access, back insertion |
+| `deque` | O(1) | O(1)* | O(n) | Both ends operations |
+| `list` | O(n) | O(1) | O(1) | Frequent middle insertions |
+| `map` | O(log n) | O(log n) | O(log n) | Key-value pairs, sorted |
 | `set` | O(log n) | O(log n) | O(log n) | Unique sorted elements |
 
-### Learning Outcomes:
-- ✅ Master advanced STL usage
-- ✅ Understand container performance
-- ✅ Learn algorithm optimization
+*O(1) at both ends
+
+### Learning Outcomes
+✓ Advanced STL usage  
+✓ Container performance understanding  
+✓ Algorithm optimization
+
+**Time Estimate:** 1-2 weeks • **Difficulty:** ⭐⭐⭐⭐
 
 </details>
+
+</div>
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-```bash
-# Required
-- C++ compiler (g++ or clang++)
-- Make
-- Git
+<div align="center">
 
-# Recommended
-- GDB (debugging)
-- Valgrind (memory leak detection)
+### Prerequisites
+
+```
+C++ Compiler (g++ or clang++)
+Make
+Git
 ```
 
-### Compilation
+**Recommended Tools**
+
+GDB (Debugging) • Valgrind (Memory Leak Detection)
+
+### Compilation Steps
+
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/yourusername/42-cpp-modules.git
 cd 42-cpp-modules
 
-# Navigate to specific module
+# Navigate to module
 cd Module_00/ex00
 
 # Compile
@@ -835,72 +926,70 @@ make
 ./program_name
 
 # Clean
-make clean    # Remove object files
-make fclean   # Remove object files and executable
-make re       # Recompile everything
+make clean    # Remove objects
+make fclean   # Remove everything
+make re       # Recompile
 ```
 
 ### 42 Norm Compliance
-```bash
-# Install norminette (if available)
-pip install norminette
 
-# Check compliance
+```bash
+# Check norm compliance
 norminette -R CheckForbiddenSourceHeader *.cpp *.hpp
 ```
+
+</div>
 
 ---
 
 ## 📖 Learning Path
 
-### Recommended Study Order:
+<div align="center">
 
-```mermaid
-graph LR
-    A[📚 Module 00<br/>1 week] --> B[🧠 Module 01<br/>1 week]
-    B --> C[⚡ Module 02<br/>1-2 weeks]
-    C --> D[🔗 Module 03<br/>1 week]
-    D --> E[🎭 Module 04<br/>1-2 weeks]
-    E --> F[🚨 Module 05<br/>1 week]
-    F --> G[🎯 Module 06<br/>1 week]
-    G --> H[📐 Module 07<br/>1 week]
-    H --> I[📚 Module 08<br/>1-2 weeks]
-    I --> J[🎓 Module 09<br/>1-2 weeks]
+### Recommended Timeline
+
+```
+Module 00  →  Module 01  →  Module 02  →  Module 03  →  Module 04
+(1 week)     (1 week)     (1-2 weeks)   (1 week)     (1-2 weeks)
+                                ↓
+Module 05  →  Module 06  →  Module 07  →  Module 08  →  Module 09
+(1 week)     (1 week)     (1 week)     (1-2 weeks)   (1-2 weeks)
 ```
 
-### Time Investment:
+### Total Time: 10-15 weeks (2.5-4 months)
 
-| Module | Difficulty | Time Estimate | Focus Area |
-|--------|-----------|---------------|------------|
-| 00 | ⭐ Easy | 1 week | Basics |
-| 01 | ⭐⭐ Medium | 1 week | Memory |
-| 02 | ⭐⭐⭐ Medium-Hard | 1-2 weeks | Operators |
-| 03 | ⭐⭐ Medium | 1 week | Inheritance |
-| 04 | ⭐⭐⭐ Medium-Hard | 1-2 weeks | Polymorphism |
-| 05 | ⭐⭐⭐ Medium-Hard | 1 week | Exceptions |
-| 06 | ⭐⭐ Medium | 1 week | Casting |
-| 07 | ⭐⭐⭐⭐ Hard | 1 week | Templates |
-| 08 | ⭐⭐⭐ Medium-Hard | 1-2 weeks | STL Basics |
-| 09 | ⭐⭐⭐⭐ Hard | 1-2 weeks | STL Advanced |
+### Difficulty Distribution
 
-**Total Time: 10-15 weeks (2.5-4 months)**
+| Level | Modules | Difficulty | Time |
+|:-----:|:-------:|:----------:|:----:|
+| Foundation | 00-02 | ⭐⭐ | 3-5 weeks |
+| Intermediate | 03-04 | ⭐⭐⭐ | 2-4 weeks |
+| Advanced | 05-09 | ⭐⭐⭐⭐ | 5-7 weeks |
+
+</div>
 
 ---
 
 ## 🔑 Key Concepts
 
+<div align="center">
+
 ### The Four Pillars of OOP
 
-<details>
-<summary>🏛️ <strong>1. Encapsulation</strong></summary>
+</div>
 
-**Definition:** Bundling data and methods that operate on that data within a single unit (class).
+<details>
+<summary><strong>1. Encapsulation</strong> - Data hiding and access control</summary>
+
+<div align="center">
+
+**Definition:** Bundling data and methods within a single unit (class)
 
 ```cpp
 class BankAccount {
 private:
-    double balance;  // Hidden from outside access
-    
+    double balance;  // Hidden
+
 public:
     void deposit(double amount) {
         if (amount > 0)
@@ -913,22 +1002,23 @@ public:
 };
 ```
 
-**Benefits:**
-- Data hiding
-- Controlled access
-- Easier maintenance
+**Benefits:** Data Hiding • Controlled Access • Easier Maintenance
+
+</div>
 </details>
 
 <details>
-<summary>🧬 <strong>2. Inheritance</strong></summary>
+<summary><strong>2. Inheritance</strong> - Creating new classes from existing ones</summary>
 
-**Definition:** Mechanism to create new classes from existing ones.
+<div align="center">
+
+**Definition:** Mechanism to derive new classes from existing classes
 
 ```cpp
 class Vehicle {
 protected:
     int speed;
-    
+
 public:
     void accelerate() { speed += 10; }
 };
@@ -936,28 +1026,28 @@ public:
 class Car : public Vehicle {
 private:
     int numberOfDoors;
-    
+
 public:
     void openDoor() { /* ... */ }
 };
 ```
 
-**Types:**
-- Single inheritance
-- Multiple inheritance
-- Hierarchical inheritance
-- Virtual inheritance (diamond problem)
+**Types:** Single • Multiple • Hierarchical • Virtual
+
+</div>
 </details>
 
 <details>
-<summary>🎭 <strong>3. Polymorphism</strong></summary>
+<summary><strong>3. Polymorphism</strong> - Many forms of the same interface</summary>
 
-**Definition:** Ability to take multiple forms.
+<div align="center">
+
+**Definition:** Ability to take multiple forms
 
 ```cpp
 class Animal {
 public:
-    virtual void makeSound() = 0;  // Pure virtual
+    virtual void makeSound() = 0;
     virtual ~Animal() {}
 };
 
@@ -976,15 +1066,17 @@ Animal* animal = new Dog();
 animal->makeSound();  // Outputs: Woof!
 ```
 
-**Types:**
-- Compile-time (overloading)
-- Runtime (virtual functions)
+**Types:** Compile-time (Overloading) • Runtime (Virtual Functions)
+
+</div>
 </details>
 
 <details>
-<summary>🔒 <strong>4. Abstraction</strong></summary>
+<summary><strong>4. Abstraction</strong> - Hiding implementation details</summary>
 
-**Definition:** Hiding complex implementation details, showing only essential features.
+<div align="center">
+
+**Definition:** Showing only essential features, hiding complexity
 
 ```cpp
 class Shape {
@@ -997,7 +1089,7 @@ public:
 class Circle : public Shape {
 private:
     double radius;
-    
+
 public:
     Circle(double r) : radius(r) {}
     
@@ -1011,42 +1103,38 @@ public:
 };
 ```
 
-**Benefits:**
-- Simplified interface
-- Reduced complexity
-- Increased security
+**Benefits:** Simplified Interface • Reduced Complexity • Increased Security
+
+</div>
 </details>
 
 ---
 
 ## 📚 Resources
 
-### 📖 Essential Books
-
-| Book | Author | Focus | Level |
-|------|--------|-------|-------|
-| **C++ Primer** | Stanley Lippman | Comprehensive intro | Beginner |
-| **Effective C++** | Scott Meyers | Best practices | Intermediate |
-| **More Effective C++** | Scott Meyers | Advanced techniques | Intermediate |
-| **Effective Modern C++** | Scott Meyers | C++11/14 features | Advanced |
-| **The C++ Programming Language** | Bjarne Stroustrup | Complete reference | All levels |
-
-### 🌐 Online Resources
-
 <div align="center">
 
-| Resource | Link | Description |
-|----------|------|-------------|
-| 📚 **42 Intranet** | [intra.42.fr](https://intra.42.fr) | Official 42 resources |
-| 📖 **C++ Reference** | [cppreference.com](https://cppreference.com) | Complete C++ documentation |
-| 🎓 **Learn C++** | [learncpp.com](https://learncpp.com) | Free C++ tutorials |
-| 📝 **42 Norm** | [42 Norm PDF](https://github.com/42School/norminette) | Coding standards |
-| 🎥 **The Cherno** | [YouTube](https://youtube.com/c/TheChernoProject) | C++ video series |
-| 📺 **CppCon** | [YouTube](https://youtube.com/user/CppCon) | Conference talks |
+### Essential Books
 
-</div>
+| Book | Author | Focus | Level |
+|:----:|:------:|:-----:|:-----:|
+| C++ Primer | Stanley Lippman | Comprehensive Introduction | Beginner |
+| Effective C++ | Scott Meyers | Best Practices | Intermediate |
+| More Effective C++ | Scott Meyers | Advanced Techniques | Intermediate |
+| Effective Modern C++ | Scott Meyers | C++11/14 Features | Advanced |
+| The C++ Programming Language | Bjarne Stroustrup | Complete Reference | All |
 
-### 🛠️ Useful Tools
+### Online Resources
+
+| Resource | Description |
+|:--------:|:------------|
+| [cppreference.com](https://cppreference.com) | Complete C++ documentation |
+| [learncpp.com](https://learncpp.com) | Free C++ tutorials |
+| [42 Intranet](https://intra.42.fr) | Official 42 resources |
+| [The Cherno](https://youtube.com/c/TheChernoProject) | C++ video series |
+| [CppCon](https://youtube.com/user/CppCon) | Conference talks |
+
+### Useful Tools
 
 ```bash
 # Debugging
@@ -1054,360 +1142,77 @@ gdb ./program              # GNU Debugger
 lldb ./program            # LLVM Debugger
 
 # Memory leak detection
-valgrind --leak-check=full ./program
+valgrind --leak-check=full --show-leak-kinds=all ./program
 
 # Code analysis
 cppcheck --enable=all *.cpp
-
-# Formatting (if allowed)
-clang-format -i *.cpp *.hpp
 
 # Static analysis
 clang-tidy *.cpp -- -std=c++98
 ```
 
-### 💡 Pro Tips
+</div>
 
-<details>
-<summary><strong>Debugging Tips</strong></summary>
+---
 
-```bash
-# Compile with debug symbols
-g++ -g -Wall -Wextra -Werror -std=c++98 *.cpp
+## 🎯 Study Tips
 
-# Common GDB commands
-(gdb) break main          # Set breakpoint
-(gdb) run                 # Start program
-(gdb) next               # Next line
-(gdb) step               # Step into function
-(gdb) print variable     # Print value
-(gdb) backtrace          # Show call stack
+<div align="center">
 
-# Valgrind for memory leaks
-valgrind --leak-check=full \
-         --show-leak-kinds=all \
-         --track-origins=yes \
-         ./program
+### For Each Module
+
+**Read** → **Understand** → **Plan** → **Code** → **Test** → **Debug** → **Submit**
+
+### Best Practices
+
 ```
-</details>
+1. Read the PDF carefully
+   └─ Understand requirements
+   └─ Note restrictions
+   └─ Check allowed functions
 
-<details>
-<summary><strong>Common Pitfalls to Avoid</strong></summary>
+2. Plan before coding
+   └─ Design class hierarchy
+   └─ Consider edge cases
+   └─ Think about memory
 
-❌ **Don't:**
+3. Code incrementally
+   └─ Start with basics
+   └─ Test each part
+   └─ Add features gradually
+
+4. Test thoroughly
+   └─ Valid inputs
+   └─ Invalid inputs
+   └─ Edge cases
+   └─ Memory leaks
+
+5. Document your code
+   └─ Clear comments
+   └─ Explain complex logic
+   └─ Document assumptions
+```
+
+### Common Pitfalls to Avoid
+
+❌ **Don't Do This**
 ```cpp
 // Forgetting virtual destructor
 class Base {
     ~Base() {}  // Should be virtual!
 };
 
-// Returning reference to local variable
+// Returning reference to local
 std::string& getTemp() {
     std::string temp = "Bad";
     return temp;  // Dangling reference!
 }
 
-// Not checking dynamic_cast result
+// Not checking dynamic_cast
 Derived* d = dynamic_cast<Derived*>(base);
-d->method();  // Could crash if d is NULL!
+d->method();  // May crash!
 ```
 
-✅ **Do:**
+✅ **Do This Instead**
 ```cpp
-// Virtual destructor in base class
-class Base {
-    virtual ~Base() {}
-};
-
-// Return by value or use static
-std::string getTemp() {
-    return std::string("Good");
-}
-
-// Check dynamic_cast result
-Derived* d = dynamic_cast<Derived*>(base);
-if (d)
-    d->method();
-```
-</details>
-
----
-
-## 🎯 Study Tips
-
-### For Each Module:
-
-1. **📖 Read the PDF Carefully**
-   - Understand the requirements
-   - Note the restrictions
-   - Check allowed functions
-
-2. **💭 Plan Before Coding**
-   - Design your class hierarchy
-   - Think about edge cases
-   - Consider memory management
-
-3. **✍️ Code Incrementally**
-   - Start with basic functionality
-   - Test each part separately
-   - Add features gradually
-
-4. **🧪 Test Thoroughly**
-   - Test with valid inputs
-   - Test with invalid inputs
-   - Test edge cases
-   - Check for memory leaks
-
-5. **📝 Document Your Code**
-   - Write clear comments
-   - Explain complex logic
-   - Document assumptions
-
-### Recommended Practice Routine:
-
-```mermaid
-graph LR
-    A[Read Subject] --> B[Understand Concepts]
-    B --> C[Plan Implementation]
-    C --> D[Code Exercise]
-    D --> E[Compile & Test]
-    E --> F{Working?}
-    F -->|No| G[Debug]
-    G --> D
-    F -->|Yes| H[Check Memory]
-    H --> I{Leaks?}
-    I -->|Yes| G
-    I -->|No| J[Review Code]
-    J --> K[Submit]
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how you can help:
-
-### How to Contribute:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add some amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
-
-### Contribution Guidelines:
-
-- ✅ Follow the 42 Norm
-- ✅ Test your code thoroughly
-- ✅ Add comments for complex logic
-- ✅ Update README if needed
-- ✅ No memory leaks!
-
-### Areas for Contribution:
-
-- 📝 Additional explanations
-- 🎯 More example code
-- 🐛 Bug fixes
-- 📚 Resource recommendations
-- 🌍 Translations
-
----
-
-## ⚠️ Important Notes
-
-### 42 Norm Restrictions:
-
-```cpp
-// ❌ NOT ALLOWED
-using namespace std;        // No 'using namespace'
-for (int i = 0; ...)       // No for loops (some modules)
-printf()                   // No C functions (use cout)
-*alloc(), free()          // No C memory functions
-
-// ✅ ALLOWED
-std::cout                  // Explicit namespace
-while (...)               // While loops OK
-new/delete               // C++ memory management
-std::vector              // STL containers (later modules)
-```
-
-### Academic Integrity:
-
-> ⚠️ **Warning**: This repository is for educational purposes. Copying code without understanding violates 42's academic integrity policy.
-
-**Use this repo to:**
-- ✅ Understand concepts
-- ✅ Compare approaches
-- ✅ Learn from examples
-- ✅ Get unstuck
-
-**Don't:**
-- ❌ Copy-paste solutions
-- ❌ Submit without understanding
-- ❌ Share during evaluations
-
----
-
-## 🏆 Progress Tracker
-
-Track your progress through the modules:
-
-- [ ] Module 00 - C++ Basics
-- [ ] Module 01 - Memory & References  
-- [ ] Module 02 - Polymorphism Intro
-- [ ] Module 03 - Inheritance
-- [ ] Module 04 - Abstract Classes
-- [ ] Module 05 - Exceptions
-- [ ] Module 06 - Type Casting
-- [ ] Module 07 - Templates
-- [ ] Module 08 - STL Containers
-- [ ] Module 09 - Advanced STL
-
-### Validation Checklist:
-
-For each exercise:
-- [ ] Compiles without errors
-- [ ] Compiles without warnings
-- [ ] Follows 42 Norm
-- [ ] No memory leaks (Valgrind clean)
-- [ ] Handles edge cases
-- [ ] Has Orthodox Canonical Form (where required)
-- [ ] Tested thoroughly
-
----
-
-## 📊 Module Difficulty Chart
-
-```mermaid
-graph TD
-    A[Difficulty Level] --> B[Module 00 ⭐]
-    A --> C[Module 01 ⭐⭐]
-    A --> D[Module 02 ⭐⭐⭐]
-    A --> E[Module 03 ⭐⭐]
-    A --> F[Module 04 ⭐⭐⭐]
-    A --> G[Module 05 ⭐⭐⭐]
-    A --> H[Module 06 ⭐⭐]
-    A --> I[Module 07 ⭐⭐⭐⭐]
-    A --> J[Module 08 ⭐⭐⭐]
-    A --> K[Module 09 ⭐⭐⭐⭐]
-    
-    style B fill:#90EE90
-    style C fill:#90EE90
-    style D fill:#FFD700
-    style E fill:#90EE90
-    style F fill:#FFD700
-    style G fill:#FFD700
-    style H fill:#90EE90
-    style I fill:#FF6347
-    style J fill:#FFD700
-    style K fill:#FF6347
-```
-
----
-
-## 💬 FAQ
-
-<details>
-<summary><strong>Q: Can I use C++11/14/17 features?</strong></summary>
-
-A: No, 42 C++ modules require C++98 standard. Use `-std=c++98` flag.
-</details>
-
-<details>
-<summary><strong>Q: Why no STL in early modules?</strong></summary>
-
-A: To understand fundamentals. You'll implement your own containers before using STL.
-</details>
-
-<details>
-<summary><strong>Q: How to handle the Orthodox Canonical Form?</strong></summary>
-
-A: Every class needs:
-1. Default constructor
-2. Copy constructor
-3. Copy assignment operator
-4. Destructor
-</details>
-
-<details>
-<summary><strong>Q: What about memory leaks?</strong></summary>
-
-A: Use Valgrind to check. Follow RAII principle. Every `new` needs a corresponding `delete`.
-</details>
-
-<details>
-<summary><strong>Q: How long does it take to complete all modules?</strong></summary>
-
-A: Typically 2.5-4 months if studying full-time, longer part-time. Quality over speed!
-</details>
-
----
-
-## 📞 Support & Community
-
-### Get Help:
-
-- 💬 **Slack** - Join your campus C++ channel
-- 🤝 **Peer Learning** - Form study groups
-- 📚 **Stack Overflow** - [C++ tag](https://stackoverflow.com/questions/tagged/c++)
-- 🎮 **Discord** - 42 community servers
-
-### Useful Links:
-
-- [42 Subject PDFs](https://github.com/42School)
-- [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/)
-- [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-Special thanks to:
-- 🏫 **42 Network** - For the excellent curriculum
-- 👥 **42 Community** - For peer support and collaboration
-- 📚 **Contributors** - For improving this guide
-- 🎓 **Open Source C++ Community** - For amazing resources
-
----
-
-## 📈 Your Learning Journey
-
-```mermaid
-journey
-    title C++ Mastery Journey
-    section Beginner
-      Start C++ Modules: 3: You
-      Learn Basic Syntax: 4: You
-      Understand Classes: 4: You
-    section Intermediate  
-      Master Inheritance: 5: You
-      Learn Polymorphism: 5: You
-      Handle Exceptions: 4: You
-    section Advanced
-      Template Programming: 5: You
-      STL Mastery: 5: You
-      Complete Modules: 5: You
-```
-
----
-
-<div align="center">
-
-**Made with ❤️ by the 42 Community**
-
-*"The best way to learn C++ is to code C++"*
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/42-cpp-modules?style=social)](https://github.com/yourusername/42-cpp-modules/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/42-cpp-modules?style=social)](https://github.com/yourusername/42-cpp-modules/network/members)
-
-### 🚀 Happy Coding!
-
-[⬆ Back to Top](#️-42-c-modules-️)
-
-</div>
+// Virtual destructor
