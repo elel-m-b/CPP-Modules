@@ -1,4 +1,5 @@
-<h1 div="align="center" ></h1>
+# ⚔️ 42 C++ Modules ⚔️
+
 <div align="center">
   <img 
     src="https://github.com/user-attachments/assets/74f39eb1-8c7e-4faa-887f-9a33742fe1dc"
@@ -26,9 +27,9 @@
 
 - [About](#-about)
 - [Modules Overview](#️-modules-overview)
-- [Foundation Level](#-foundation-level-modules-00-02)
-- [Intermediate Level](#-intermediate-level-modules-03-04)
-- [Advanced Level](#-advanced-level-modules-05-09)
+  - [Foundation Level](#-foundation-level-modules-00-02)
+  - [Intermediate Level](#-intermediate-level-modules-03-04)
+  - [Advanced Level](#-advanced-level-modules-05-09)
 - [Quick Start](#-quick-start)
 - [Learning Path](#-learning-path)
 - [Key Concepts](#-key-concepts)
@@ -43,7 +44,18 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 
 > 🎯 **Goal**: Not just to learn C++ syntax, but to truly understand the *why* and *how* behind Object-Oriented Programming, memory management, and modern C++ practices.
 
-<div align="center" >
+### Why C++ Modules?
+
+```cpp
+// Before C++ Modules
+void* ptr = malloc(sizeof(int));  // C style - error prone
+strcpy(dest, src);                // Unsafe
+
+// After C++ Modules
+std::unique_ptr<int> ptr = std::make_unique<int>(42);  // RAII
+std::string str = "Safe!";                              // Type-safe
+```
+
 **What You'll Learn:**
 - ✅ Object-Oriented Programming fundamentals
 - ✅ Memory management and RAII principles
@@ -51,38 +63,47 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 - ✅ STL containers and algorithms
 - ✅ Exception handling and templates
 - ✅ Modern C++ best practices
-</div>
+
 ---
+
 ## 🗺️ Modules Overview
 
 <div align="center">
 
 ```mermaid
 graph TD
-    A[Module 00<br/>C++ Basics] --> B[Module 01<br/>Memory & References]
-    B --> C[Module 02<br/>Polymorphism Intro]
-    C --> D[Module 03<br/>Inheritance]
-    D --> E[Module 04<br/>Abstract Classes]
-    E --> F[Module 05<br/>Exceptions]
-    F --> G[Module 06<br/>Casts]
-    G --> H[Module 07<br/>Templates]
-    H --> I[Module 08<br/>STL]
-    I --> J[Module 09<br/>STL Advanced]
+    classDef default fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    
+    A["Module 00<br/>C++ Basics"]
+    B["Module 01<br/>Memory & References"]
+    C["Module 02<br/>Polymorphism Intro"]
+    D["Module 03<br/>Inheritance"]
+    E["Module 04<br/>Abstract Classes"]
+    F["Module 05<br/>Exceptions"]
+    G["Module 06<br/>Casts"]
+    H["Module 07<br/>Templates"]
+    I["Module 08<br/>STL"]
+    J["Module 09<br/>STL Advanced"]
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    
+    %% Apply the same style to all
+    class A,B,C,D,E,F,G,H,I,J default
 
-    style A fill:#ffffff,stroke:#000000
-    style B fill:#ffffff,stroke:#000000
-    style C fill:#ffffff,stroke:#000000
-    style D fill:#ffffff,stroke:#000000
-    style E fill:#ffffff,stroke:#000000
-    style F fill:#ffffff,stroke:#000000
-    style G fill:#ffffff,stroke:#000000
-    style H fill:#ffffff,stroke:#000000
-    style I fill:#ffffff,stroke:#000000
-    style J fill:#ffffff,stroke:#000000
+</div>
 
+---
 
-<h2 div=align="center" > 🟢 Foundation Level (Modules 00-02) </h2>
-<div align ="center" >
+## 🟢 Foundation Level (Modules 00-02)
+
 <details>
 <summary>📦 <strong>Module 00 - C++ Basics</strong></summary>
 
@@ -258,7 +279,7 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 - ✅ Learn fixed-point arithmetic
 
 </details>
-</div>
+
 ---
 
 ## 🟡 Intermediate Level (Modules 03-04)
