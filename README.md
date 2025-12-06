@@ -72,6 +72,8 @@ std::string str = "Safe!";                              // Type-safe
 
 ```mermaid
 graph TD
+   classDef default fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    
     A[Module 00<br/>C++ Basics] --> B[Module 01<br/>Memory & References]
     B --> C[Module 02<br/>Polymorphism Intro]
     C --> D[Module 03<br/>Inheritance]
@@ -82,16 +84,7 @@ graph TD
     H --> I[Module 08<br/>STL]
     I --> J[Module 09<br/>STL Advanced]
     
-    style A fill:#90EE90
-    style B fill:#90EE90
-    style C fill:#90EE90
-    style D fill:#FFD700
-    style E fill:#FFD700
-    style F fill:#FF6347
-    style G fill:#FF6347
-    style H fill:#FF6347
-    style I fill:#FF6347
-    style J fill:#FF6347
+    class A,B,C,D,E,F,G,H,I,J default
 ```
 
 </div>
