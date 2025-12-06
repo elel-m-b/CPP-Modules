@@ -53,12 +53,10 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 - ✅ Modern C++ best practices
 </div>
 ---
-
 ## 🗺️ Modules Overview
 
 <div align="center">
 
-```mermaid
 ```mermaid
 graph TD
     A[Module 00<br/>C++ Basics] --> B[Module 01<br/>Memory & References]
@@ -82,9 +80,6 @@ graph TD
     style I fill:#ffffff,stroke:#000000
     style J fill:#ffffff,stroke:#000000
 
-</div>
-
----
 
 <h2 div=align="center" > 🟢 Foundation Level (Modules 00-02) </h2>
 <div align ="center" >
