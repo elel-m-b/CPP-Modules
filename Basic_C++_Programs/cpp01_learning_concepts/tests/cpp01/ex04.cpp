@@ -9,6 +9,7 @@
 // step 5 : create output file : filename.replace
 // step 6 : write modified content
 // step 7 : done
+
 int main(int ac, char **av)
 {
     if (ac != 4)
@@ -44,7 +45,7 @@ int main(int ac, char **av)
         int     pos; // starting pos of s1
         std::string     newline; // modofied line
 
-        while ((pos = line.find(s1, index)) != std::string::npos)
+        while ((pos = line.find(s1, index)) != -1)
         {
             newline += line.substr(index, pos - index);
             newline += s2;

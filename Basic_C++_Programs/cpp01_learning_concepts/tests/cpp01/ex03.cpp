@@ -84,7 +84,7 @@ void HumanB::attack()
 int main()
 {
     {
-        Weapon club("crude spiked club");
+        Weapon club ("weapon 1");
         HumanA bob("Bob", club);
         bob.attack();
         club.setType("some other type of club");
@@ -98,5 +98,4 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
-    {}
 }
