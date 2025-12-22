@@ -6,25 +6,17 @@ class Fixed
     private:
     int _value;
     static const int _fractionalBits = 8;
-
     public:
     // ---------------- Constructors ----------------
-    Fixed() : _value(0) {}
-    Fixed(const int val) : _value(val << _fractionalBits) {}
-    Fixed(const float val) : _value(roundf(val * (1 << _fractionalBits))) {}
-    Fixed(const Fixed& other) : _value(other._value) {}
-
+    Fixed();
+    Fixed(const int val);
+    Fixed(const float val);
+    Fixed(const Fixed& other);
     // ---------------- Assignment ----------------
-    Fixed& operator=(const Fixed& other)
-    {
-        if (this != &other)
-            _value = other._value;
-        return *this;
-    }
-
+    Fixed& operator=(const Fixed& other);
     // ---------------- Conversion ----------------
-    float toFloat() const { return static_cast<float>(_value) / (1 << _fractionalBits); }
-    int toInt() const { return _value >> _fractionalBits; }
+    float toFloat() const;
+    int toInt() const;
 
     // ---------------- Comparison Operators ----------------
     bool operator>(const Fixed& other) const { return _value > other._value; }
