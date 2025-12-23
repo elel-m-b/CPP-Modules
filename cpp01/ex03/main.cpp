@@ -6,7 +6,7 @@
 int main()
 {
     {
-        Weapon club ("weapon 1");
+        Weapon club ("weapon");
         HumanA bob("Bob", club);
         bob.attack();
         club.setType("some other type of club");

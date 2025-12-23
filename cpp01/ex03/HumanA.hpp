@@ -1,3 +1,5 @@
+#ifndef HUMANA_HPP
+#define HUMAN_HPP
 #include <iostream>
 #include "Weapon.hpp"
 class HumanA
@@ -10,3 +12,4 @@ class HumanA
     HumanA(const std::string& name, Weapon& weapon);
     void attack();
 };
+#endif
