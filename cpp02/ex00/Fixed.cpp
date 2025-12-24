@@ -1,52 +1,45 @@
-#include <iostream>
+#include "Fixed.hpp"
 
-class       Fixed
+/* static member definition */
+const int Fixed::integer = 8;
+
+/* Constructors / Destructor */
+
+Fixed::Fixed()
 {
-    private:
-    int     _value;
-    static const int integer;
-    public:
-    Fixed()
-    {
-        std::cout << "Default constructor called\n";
-        _value = 0;
-    }
-    Fixed(const     Fixed& other) // A copy constructor.
-    {
-        std::cout << "copy constracteur called\n";
-        _value = other._value;
-    }
+    std::cout << "Default constructor called\n";
+    _value = 0;
+}
 
-    Fixed& operator=(const Fixed& other)
-    {
-        std::cout << "Copy assignment operator called \n";
-        this->_value = other._value;
-        return *this;
-    }
-    int getRawBits( void ) const;
-    void setRawBits( int const raw );
-    ~Fixed(){std::cout << "Destructor called\n";}
-};
+Fixed::Fixed(const Fixed& other)
+{
+    std::cout << "copy constracteur called\n";
+    _value = other._value;
+}
 
-int Fixed::getRawBits() const
+Fixed::~Fixed()
+{
+    std::cout << "Destructor called\n";
+}
+
+/* Operator overload */
+
+Fixed& Fixed::operator=(const Fixed& other)
+{
+    std::cout << "Copy assignment operator called \n";
+    this->_value = other._value;
+    return *this;
+}
+
+/* Member functions */
+
+int Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called\n";
-    return (_value);
+    return _value;
 }
 
-void    Fixed::setRawBits(int const raw)
+void Fixed::setRawBits(int const raw)
 {
     _value = raw;
-}
-
-int main( void ) 
-{
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
-    c = b;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-    return 0;
 }

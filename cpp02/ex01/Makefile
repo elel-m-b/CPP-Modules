@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = Fixed.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = ex02
+NAME = ex01
 
 all: $(NAME)
 

@@ -1,33 +1,27 @@
-#ifndef     FIXED_HPP
-#define     FIXED_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
 #include <iostream>
-#include <cmath>
 
 class Fixed
 {
-    private:
+private:
     int _value;
     static const int _fractionalBits = 8;
 
-    public:
-    // Default constructor
+public:
+    // ---------------- Constructors ----------------
     Fixed();
-    // Copy constructor
+    Fixed(const int val);
+    Fixed(const float val);
     Fixed(const Fixed& other);
-    // Int constructor
-    Fixed(const int value);
-    // Float constructor
-    Fixed(const float value);
-    // Copy assignment operator
+
+    // ---------------- Assignment ----------------
     Fixed& operator=(const Fixed& other);
-    // Destructor
-    ~Fixed();
-    // Getters / setters
-    int getRawBits(void) const;
-    void setRawBits(int const raw);
-    // Conversions
-    float toFloat(void) const;
-    int toInt(void) const;
+
+    // ---------------- Conversion ----------------
+    float toFloat() const;
+    int toInt() const;
 
     // ---------------- Comparison Operators ----------------
     bool operator>(const Fixed& other) const;
@@ -36,20 +30,21 @@ class Fixed
     bool operator<=(const Fixed& other) const;
     bool operator==(const Fixed& other) const;
     bool operator!=(const Fixed& other) const;
+
     // ---------------- Arithmetic Operators ----------------
     Fixed operator+(const Fixed& other) const;
     Fixed operator-(const Fixed& other) const;
     Fixed operator*(const Fixed& other) const;
     Fixed operator/(const Fixed& other) const;
+
     // ---------------- Increment / Decrement ----------------
-    // pre-increment
-    Fixed& operator++();
-    // post-increment
-    Fixed operator++(int);
-    // pre-decrement
-    Fixed& operator--();
-    // post-decrement
-    Fixed operator--(int);
+    Fixed& operator++();    // pre-increment
+    Fixed operator++(int);  // post-increment
+    Fixed& operator--();    // pre-decrement
+    Fixed operator--(int);  // post-decrement
+
+    // ---------------- Stream operator ----------------
+    friend std::ostream& operator<<(std::ostream& os, const Fixed& f);
 };
-std::ostream& operator<<(std::ostream& os, const Fixed& f);
+
 #endif
