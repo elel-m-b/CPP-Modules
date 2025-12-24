@@ -1,66 +1,142 @@
 #include "Fixed.hpp"
 #include <cmath>
+#include <iostream>
 
-/* ---------------- Constructors ---------------- */
+// ====================
+// Constructors & Destructor
+// ====================
+
+// Default constructor: initialize value to 0
 Fixed::Fixed() : _value(0) {}
 
-Fixed::Fixed(const int val)
-{
-    _value = val << _fractionalBits;
-}
+// Construct from integer: shift left by fractional bits
+Fixed::Fixed(const int n) : _value(n << _fractionalBits) {}
 
-Fixed::Fixed(const float val)
-{
-    _value = roundf(val * (1 << _fractionalBits));
-}
+// Construct from float: multiply and round to nearest integer
+Fixed::Fixed(const float f) 
+    : _value(roundf(f * (1 << _fractionalBits))) {}
 
-Fixed::Fixed(const Fixed& other)
-{
-    _value = other._value;
-}
+// Copy constructor: copy the internal value
+Fixed::Fixed(const Fixed &other) : _value(other._value) {}
 
-/* ---------------- Assignment ---------------- */
-Fixed& Fixed::operator=(const Fixed& other)
+// Destructor
+Fixed::~Fixed() {}
+
+// ====================
+// Assignment Operator
+// ====================
+Fixed &Fixed::operator=(const Fixed &other) 
 {
-    if (this != &other)
+    if (this != &other)  // avoid self-assignment
         _value = other._value;
     return *this;
 }
 
-/* ---------------- Conversion ---------------- */
-float Fixed::toFloat() const
-{
-    return static_cast<float>(_value) / (1 << _fractionalBits);
+// ====================
+// Comparison Operators
+// ====================
+bool Fixed::operator>(const Fixed &other) const { return _value > other._value; }
+bool Fixed::operator<(const Fixed &other) const { return _value < other._value; }
+bool Fixed::operator>=(const Fixed &other) const { return _value >= other._value; }
+bool Fixed::operator<=(const Fixed &other) const { return _value <= other._value; }
+bool Fixed::operator==(const Fixed &other) const { return _value == other._value; }
+bool Fixed::operator!=(const Fixed &other) const { return _value != other._value; }
+
+// ====================
+// Arithmetic Operators
+// ====================
+Fixed Fixed::operator+(const Fixed &other) const { return Fixed(toFloat() + other.toFloat()); }
+Fixed Fixed::operator-(const Fixed &other) const { return Fixed(toFloat() - other.toFloat()); }
+Fixed Fixed::operator*(const Fixed &other) const { return Fixed(toFloat() * other.toFloat()); }
+Fixed Fixed::operator/(const Fixed &other) const { return Fixed(toFloat() / other.toFloat()); }
+
+// ====================
+// Increment / Decrement
+// ====================
+
+// Pre-increment: ++x
+Fixed &Fixed::operator++() 
+{ 
+    _value++;
+    return *this;
 }
 
-int Fixed::toInt() const
-{
-    return _value >> _fractionalBits;
+// Post-increment: x++
+Fixed Fixed::operator++(int) 
+{ 
+    Fixed tmp(*this);
+    _value++;
+    return tmp;
 }
 
-/* ---------------- Comparison Operators ---------------- */
-bool Fixed::operator>(const Fixed& other) const { return _value > other._value; }
-bool Fixed::operator<(const Fixed& other) const { return _value < other._value; }
-bool Fixed::operator>=(const Fixed& other) const { return _value >= other._value; }
-bool Fixed::operator<=(const Fixed& other) const { return _value <= other._value; }
-bool Fixed::operator==(const Fixed& other) const { return _value == other._value; }
-bool Fixed::operator!=(const Fixed& other) const { return _value != other._value; }
+// Pre-decrement: --x
+Fixed &Fixed::operator--() 
+{ 
+    _value--;
+    return *this;
+}
 
-/* ---------------- Arithmetic Operators ---------------- */
-Fixed Fixed::operator+(const Fixed& other) const { return Fixed(this->toFloat() + other.toFloat()); }
-Fixed Fixed::operator-(const Fixed& other) const { return Fixed(this->toFloat() - other.toFloat()); }
-Fixed Fixed::operator*(const Fixed& other) const { return Fixed(this->toFloat() * other.toFloat()); }
-Fixed Fixed::operator/(const Fixed& other) const { return Fixed(this->toFloat() / other.toFloat()); }
+// Post-decrement: x--
+Fixed Fixed::operator--(int) 
+{ 
+    Fixed tmp(*this);
+    _value--;
+    return tmp;
+}
 
-/* ---------------- Increment / Decrement ---------------- */
-Fixed& Fixed::operator++() { _value += 1; return *this; }     // pre-increment
-Fixed Fixed::operator++(int) { Fixed temp(*this); _value += 1; return temp; } // post-increment
-Fixed& Fixed::operator--() { _value -= 1; return *this; }     // pre-decrement
-Fixed Fixed::operator--(int) { Fixed temp(*this); _value -= 1; return temp; } // post-decrement
+// ====================
+// Getters / Setters
+// ====================
+int Fixed::getRawBits() const { return _value; }
+void Fixed::setRawBits(int const raw) { _value = raw; }
 
-/* ---------------- Stream operator ---------------- */
-std::ostream& operator<<(std::ostream& os, const Fixed& f)
+// Convert fixed-point value to float
+float Fixed::toFloat() const { return (float)_value / (1 << _fractionalBits); }
+
+// Convert fixed-point value to integer (truncates)
+int Fixed::toInt() const { return _value >> _fractionalBits; }
+
+// ====================
+// Min / Max Functions
+// ====================
+
+// Return the smaller of two non-const Fixed objects
+Fixed &Fixed::min(Fixed &a, Fixed &b) 
 {
-    os << f.toFloat();
-    return os;
+    if (a < b)
+        return a;
+    return b;
+}
+
+// Return the smaller of two const Fixed objects
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b) 
+{
+    if (a < b)
+        return a;
+    return b;
+}
+
+// Return the larger of two non-const Fixed objects
+Fixed &Fixed::max(Fixed &a, Fixed &b) 
+{
+    if (a > b)
+        return a;
+    return b;
+}
+
+// Return the larger of two const Fixed objects
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b) 
+{
+    if (a > b)
+        return a;
+    return b;
+}
+
+// ====================
+// Output Stream Overload
+// ====================
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed) 
+{
+    out << fixed.toFloat();  // output as float
+    return out;
 }
