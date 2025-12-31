@@ -6,7 +6,7 @@
 int main()
 {
     {
-        Weapon club ("weapon");
+        Weapon club ("crude spiked club");
         HumanA bob("Bob", club);
         bob.attack();
         club.setType("some other type of club");
@@ -20,4 +20,5 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
+    return (0);
 }
