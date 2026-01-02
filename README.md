@@ -1,4 +1,4 @@
-<h1 align = "center" > ⚔️ 42 C++ Modules ⚔️ </h1>
+
 </div>
 
 <div align="center">
