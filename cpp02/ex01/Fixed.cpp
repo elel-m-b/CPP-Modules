@@ -2,6 +2,8 @@
 #include <cmath>
 
 /* Constructors */
+const int Fixed::_fractionalBits = 8;
+
 
 Fixed::Fixed()
 {
@@ -34,6 +36,8 @@ Fixed& Fixed::operator=(const Fixed& other)
     std::cout << "Copy assignment operator called\n";
     if (this != &other)
         _value = other._value;
+    else 
+        std::cout << "self assignement\n ";
     return *this;
 }
 
@@ -60,7 +64,7 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-    return static_cast<float>(_value) / (1 << _fractionalBits);
+    return (float)(_value) / (1 << _fractionalBits);
 }
 
 int Fixed::toInt(void) const

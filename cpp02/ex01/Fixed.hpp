@@ -7,7 +7,7 @@ class Fixed
 {
 private:
     int _value;
-    static const int _fractionalBits = 8;
+    static const int _fractionalBits;
 
 public:
     // Constructors
@@ -23,8 +23,8 @@ public:
     ~Fixed();
 
     // Getters / setters
-    int getRawBits(void) const;
-    void setRawBits(int const raw);
+    int getRawBits(void) const; 
+    void setRawBits(int const raw); 
 
     // Conversions
     float toFloat(void) const;
