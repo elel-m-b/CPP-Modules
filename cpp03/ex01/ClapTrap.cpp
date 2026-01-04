@@ -8,7 +8,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "default constracteur are called\n";
+    std::cout << "ClapTrap default constracteur are called\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
