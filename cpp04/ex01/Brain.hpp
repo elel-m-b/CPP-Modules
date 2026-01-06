@@ -10,7 +10,7 @@ class Brain
 {
     private:
     std::string ideas[MAX_IDEAS];
-
+    
     public:
     Brain();
     Brain(const Brain &other);

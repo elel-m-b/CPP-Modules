@@ -1,7 +1,9 @@
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 Dog::Dog()
 {
+    brain = new Brain();
     type = "Dog";
     std::cout << "Dog default constructor called" << std::endl;
 }
@@ -21,6 +23,7 @@ Dog& Dog::operator=(const Dog& other)
 
 Dog::~Dog()
 {
+    delete brain;
     std::cout << "Dog Destructor called" << std::endl;
 }
 
