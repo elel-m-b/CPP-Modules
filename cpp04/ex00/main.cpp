@@ -7,6 +7,8 @@ int main()
 {
     Animal a = Cat();
     a.makeSound();
+    WrongAnimal *b = new WrongCat();
+    b->makeSound();
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
