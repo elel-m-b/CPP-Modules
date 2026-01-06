@@ -2,25 +2,26 @@
 
 Brain::Brain()
 {
-    std::cout << "Brain default constarcteur is called" << std::endl;
+    std::cout << "Brain default constructor called\n";
 }
 
 Brain::Brain(const Brain &other)
 {
-    std::cout << "Brain Copy Constarcteur is called " << "\n";
+    std::cout << "Brain copy constructor called\n";
     *this = other;
 }
 
 Brain &Brain::operator=(const Brain &other)
-{    
-    if (this != &other )
+{
+    if (this != &other)
     {
-        std::cout << "OK\n";
+        for (int i = 0; i < 100; i++)
+            ideas[i] = other.ideas[i];
     }
-    return (*this);
+    return *this;
 }
 
 Brain::~Brain()
 {
-    std::cout << "Brain destracteur is called " << std::endl;
+    std::cout << "Brain destructor called\n";
 }
