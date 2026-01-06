@@ -1,130 +1,138 @@
 #include <iostream>
-#include <string>
 
-// ----------------- Base Class -----------------
-class Animal {
+class Animal
+{
     protected:
     std::string type;
+
     public:
-    Animal() : type("Unknown")
-    {
-        std::cout << "[Animal] Constructor called\n";
-    }
-    virtual ~Animal() 
-    {
-        std::cout << "[Animal] Destructor called\n";
-    }
-
-    virtual void makeSound() const 
-    {
-        std::cout << "[Animal] Generic animal sound!\n";
-    }
-
-    std::string getType() const 
-    {
-        return type;
-    }
+    Animal();
+    Animal(const Animal& other);
+    Animal& operator=(const Animal& other);
+    ~Animal();
+    virtual void makeSound() const;
+    std::string getType() const;
 };
 
-// ----------------- Derived Classes -----------------
-class Dog : public Animal 
+class Dog : public Animal
 {
     public:
-    Dog() {
-        type = "Dog";
-        std::cout << "[Dog] Constructor called\n";
-    }
-    ~Dog() 
-    {
-        std::cout << "[Dog] Destructor called\n";
-    }
-
-    void makeSound() const override 
-    {
-        std::cout << "Woof! Woof!\n";
-    }
+    Dog();
+    Dog(const Dog& other);
+    Dog& operator=(const Dog& other);
+    ~Dog();
+    void makeSound() const;
 };
 
-class Cat : public Animal {
-public:
-    Cat() {
-        type = "Cat";
-        std::cout << "[Cat] Constructor called\n";
-    }
-    ~Cat() {
-        std::cout << "[Cat] Destructor called\n";
-    }
-
-    void makeSound() const override {
-        std::cout << "Meow! Meow!\n";
-    }
-};
-
-// ----------------- WrongAnimal and WrongCat -----------------
-class WrongAnimal {
-protected:
-    std::string type;
-public:
-    WrongAnimal() : type("WrongAnimal") {
-        std::cout << "[WrongAnimal] Constructor called\n";
-    }
-    ~WrongAnimal() {
-        std::cout << "[WrongAnimal] Destructor called\n";
-    }
-
-    void makeSound() const {
-        std::cout << "[WrongAnimal] Generic wrong animal sound!\n";
-    }
-
-    std::string getType() const {
-        return type;
-    }
-};
-
-class WrongCat : public WrongAnimal {
-public:
-    WrongCat() {
-        type = "WrongCat";
-        std::cout << "[WrongCat] Constructor called\n";
-    }
-    ~WrongCat() {
-        std::cout << "[WrongCat] Destructor called\n";
-    }
-
-    void makeSound() const { // not virtual
-        std::cout << "[WrongCat] Meow? (wrong sound)\n";
-    }
-};
-
-// ----------------- Main Function -----------------
-int main() 
+class Cat : public Animal
 {
-    std::cout << "=== Correct Animals ===\n";
+    public:
+    Cat();
+    Cat(const Cat& other);
+    Cat& operator=(const Cat& other);
+    ~Cat();
+
+    void makeSound() const;
+};
+
+std::string Animal::getType() const
+{
+    return (type);
+}
+
+Animal::Animal() : type("Animal")
+{
+    std::cout << "Animal Default constructor called" << std::endl;
+}
+Animal::Animal(const Animal& other)
+{
+    std::cout << "Animal Copy constructor called" << std::endl;
+    type = other.type;
+}
+Dog::Dog()
+{
+    type = "Dog";
+    std::cout << "Dog default constructor called" << std::endl;
+}
+
+Animal& Animal::operator=(const Animal& other)
+{
+    std::cout << "Animal Copy assignment operator called" << std::endl;
+    if (this != &other)
+        type = other.type;
+    return *this;
+}
+
+Animal::~Animal()
+{
+    std::cout << "Animal Destructor called" << std::endl;
+}
+void Animal::makeSound() const
+{
+    std::cout << "Animal makes an undefined sound" << std::endl;
+}
+Dog::Dog(const Dog& other) : Animal(other)
+{
+    std::cout << "Dog Copy constructor called" << std::endl;
+}
+
+Dog& Dog::operator=(const Dog& other)
+{
+    std::cout << "Dog Copy assignment operator called" << std::endl;
+    if (this != &other)
+        Animal::operator=(other);
+    return *this;
+}
+
+Dog::~Dog()
+{
+    std::cout << "Dog Destructor called" << std::endl;
+}
+
+void Dog::makeSound() const
+{
+    std::cout << "Dog Woof! Woof!" << std::endl;
+}
+
+Cat::Cat()
+{
+    type = "Cat";
+    std::cout << "Cat Default constructor called" << std::endl;
+}
+
+Cat& Cat::operator=(const Cat& other)
+{
+    std::cout << "Cat Copy assignment operator called" << std::endl;
+    if (this != &other)
+        Animal::operator=(other);
+    return *this;
+}
+
+Cat::Cat(const Cat& other) : Animal(other)
+{
+    std::cout << "Cat Copy constructor called" << std::endl;
+}
+Cat::~Cat()
+{
+    std::cout << "Cat Destructor called" << std::endl;
+}
+void Cat::makeSound() const
+{
+    std::cout << "Cat Meow~" << std::endl;
+}
+
+
+int main()
+{
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-
-    std::cout << j->getType() << std::endl;
-    std::cout << i->getType() << std::endl;
-
-    i->makeSound(); // Cat sound
-    j->makeSound(); // Dog sound
-    meta->makeSound(); // Animal sound
-
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    j->makeSound(); //will output the cat sound!
+    j->makeSound(); 
+    meta->makeSound();
     delete meta;
     delete j;
     delete i;
-
-    std::cout << "\n=== Wrong Animals ===\n";
-    const WrongAnimal* wrongMeta = new WrongAnimal();
-    const WrongAnimal* wrongCat = new WrongCat();
-
-    std::cout << wrongCat->getType() << std::endl;
-    wrongCat->makeSound(); // Will output WrongAnimal sound because not virtual
-    wrongMeta->makeSound();
-
-    delete wrongMeta;
-    delete wrongCat;
-
-    return 0;
 }
