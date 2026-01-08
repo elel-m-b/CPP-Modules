@@ -2,18 +2,21 @@
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-	std::cout << "ClapTrap copy constracteur called" << std::endl;
-	*this = other;
+	std::cout << "ClapTrap Copy Constructor is called\n";
+    name = other.name;
+    hitPoints = other.hitPoints;
+    energyPoints = other.energyPoints;
+    attackDamage = other.attackDamage;
 }
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap(): name(""), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-    std::cout << "ClapTrap default constracteur are called\n";
+    std::cout << "ClapTrap Default Constructor is called\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap Copy Assignment Operator is called\n";
     if (this != &other)
     {
         name = other.name;
@@ -26,7 +29,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap Destracteur is called" << std::endl;
+	std::cout << "ClapTrap Destracteur is called\n";
 }
 
 ClapTrap::ClapTrap(const std::string& _name) :name(_name), hitPoints(10), energyPoints(10), attackDamage(0) 
@@ -55,7 +58,7 @@ void ClapTrap::takeDamage(unsigned int amount)
     hitPoints -= amount;
     if (hitPoints < 0)
         hitPoints = 0;
-    std::cout << "ClapTrap " << name << " takes " << amount << " points of damage. " << "Current HP: " << hitPoints << "\n";
+    std::cout << "ClapTrap " << name << " takes " << amount << " points of damage. " << "Current hitPoints: " << hitPoints << "\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount) 

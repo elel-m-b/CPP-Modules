@@ -2,19 +2,12 @@
 
 int main()
 {
-    ClapTrap m;
-    ClapTrap    a("R1");
-    ClapTrap    b("R2");
-    ClapTrap    c("R3");
-    ClapTrap    d("R4");
-
-    a.takeDamage(10);
-    a.beRepaired(1);
-    a.beRepaired(20); 
-    a.attack("P1");
-    a.takeDamage(20);
-    a.takeDamage(10);
-    a.attack("P4");
-    a.takeDamage(1);
+    ClapTrap        c1("R1");
+    c1.attack("T1");
+    c1.takeDamage(10);
+    c1.attack("T1");
+    c1.takeDamage(10);
+    ClapTrap    c2(c1);
+    c2.attack("S1");
     return 0;
 }

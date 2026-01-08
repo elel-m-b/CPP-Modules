@@ -2,13 +2,22 @@
 
 int main()
 {
-    ScavTrap    a("R1");
+    ScavTrap    c1("R1");
+    c1.guardGate();
+    c1.attack("P1");
+    c1.beRepaired(1);
+    c1.takeDamage(10);
+    c1.takeDamage(100);
+    c1.attack("P1");
+    c1.beRepaired(10);
+    ScavTrap c2(c1);
+    c2.attack("P1");
+    ScavTrap    a;
     a.attack("P1");
-    a.takeDamage(20);
-    a.takeDamage(100);
-    a.attack("P1");
-    a.beRepaired(10);
-    ScavTrap    b("R2");
-    b.beRepaired(1);
-    b.takeDamage(1);
+    ClapTrap b;
+    b.attack("P2");
+    ScavTrap    p1("1");
+    ScavTrap    p2("2");
+    ScavTrap    p3("3");
+    ScavTrap    p4("4");
 }

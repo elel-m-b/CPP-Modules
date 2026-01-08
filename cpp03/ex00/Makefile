@@ -8,7 +8,7 @@ NAME = ex00
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) 
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
