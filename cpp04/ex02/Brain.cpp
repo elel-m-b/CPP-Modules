@@ -3,14 +3,14 @@
 Brain::Brain()
 {
     std::cout << "Brain default constructor called\n";
-    for (int i = 0; i < MAX_IDEAS; i++)
+    for(int i = 0; i < MAX_IDEAS; i++)
         ideas[i] = "someideas";
 }
 
 Brain::Brain(const Brain &other)
 {
     std::cout << "Brain copy constructor called\n";
-    for (int i = 0; i < MAX_IDEAS; i++)
+    for(int i = 0; i < MAX_IDEAS; i++)
         ideas[i] = other.ideas[i];
 }
 
@@ -29,4 +29,3 @@ Brain::~Brain()
 {
     std::cout << "Brain destructor called\n";
 }
-

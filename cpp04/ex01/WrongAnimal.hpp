@@ -13,8 +13,8 @@ class WrongAnimal
     WrongAnimal();
     WrongAnimal(const WrongAnimal& other);
     WrongAnimal& operator=(const WrongAnimal& other);
-    ~WrongAnimal();          // NOT virtual on purpose
-    virtual void makeSound() const;  // NOT virtual on purpose
+    ~WrongAnimal();    
+    void makeSound() const;
 };
 
 #endif

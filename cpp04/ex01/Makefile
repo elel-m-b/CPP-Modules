@@ -1,4 +1,4 @@
-CXX = c++
+CXX = c++ -g
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
