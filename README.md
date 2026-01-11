@@ -53,7 +53,7 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 </td>
 <td width="50%">
 
-### 🚀 **Advanced Modules**
+
 
 - **🔗 Module 03** - *Inheritance*
   - Class hierarchies
