@@ -11,11 +11,6 @@
 
 <div align="center">
 
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![42](https://img.shields.io/badge/42-000000?style=for-the-badge&logo=42&logoColor=white)
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
 *A comprehensive collection of exercises designed to master the fundamentals of **C++ programming***
 
 </div>
