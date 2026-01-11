@@ -82,7 +82,7 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 | 📚 **42 Intranet** | [intra.42.fr](https://intra.42.fr) |
 | 📖 **C++ Reference** | [cppreference.com](https://cppreference.com) |
 | 🎓 **Learn C++** | [learncpp.com](https://learncpp.com) |
-| 📝 **42 Norm** | [42 Coding Standard](https://github.com/42School/norminette) |
+
 
 </div>
 
