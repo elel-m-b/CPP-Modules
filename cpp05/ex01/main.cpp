@@ -24,23 +24,17 @@ int main(void)
     std::cout << Bureaucrat("Ahmed", 1) << std::endl;
     Bureaucrat b("Hassan", 150);
     std::cout << Bureaucrat("Hasaan", 150) << std::endl;
-    int a;
-    std::cin >> a;
-    try 
-    {
-        if (a < 0)
-            throw   std::invalid_argument("Error");
-    }
-    catch (std::exception& e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    try
-    {
-        Bureaucrat  c("test", 10);
-    }
-    catch (std::exception& e) 
-    {
-        std::cout << e.what() << std::endl;
-    }
+
+
+    // int a;
+    // std::cin >> a;
+    // try 
+    // {
+    //     if (a < 0)
+    //         throw   std::invalid_argument("Error");
+    // }
+    // catch (std::exception& e)
+    // {
+    //     std::cout << e.what() << std::endl;
+    // }
 }
