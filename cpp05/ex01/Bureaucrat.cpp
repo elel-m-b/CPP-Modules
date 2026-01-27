@@ -13,7 +13,20 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name)
 Bureaucrat::Bureaucrat(const Bureaucrat& other): name(other.name), grade(other.grade)
 {
 }
-
+void Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << _name << " couldn’t sign "
+				  << form.getName() << " because "
+				  << e.what() << std::endl;
+	}
+}
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
     if (this != &other)
