@@ -1,10 +1,16 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Bureaucrat.cpp main.cpp
-OBJS = $(SRCS:.cpp=.o)
+NAME = ex02
 
-NAME = ex00
+SRCS = main.cpp \
+	Bureaucrat.cpp \
+	AForm.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp
+
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
@@ -19,4 +25,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: fclean clean all re 
+.PHONY: all clean fclean re
