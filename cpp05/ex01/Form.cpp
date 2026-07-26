@@ -1,12 +1,9 @@
 #include "Form.hpp"
 
 // Constructor
-Form::Form()
-    : _name("Default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {}
+Form::Form() : _name("Default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {}
 
-Form::Form(const std::string& name, int gradeToSign, int gradeToExecute)
-    : _name(name), _isSigned(false),
-      _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+Form::Form(const std::string& name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     if (gradeToSign < 1 || gradeToExecute < 1)
         throw GradeTooHighException();
@@ -69,9 +66,6 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream& operator<<(std::ostream& os, const Form& form)
 {
-    os << "Form " << form.getName()
-       << ", signed: " << form.getIsSigned()
-       << ", grade to sign: " << form.getGradeToSign()
-       << ", grade to execute: " << form.getGradeToExecute();
+    os << "Form " << form.getName() << ", signed: " << form.getIsSigned() << ", grade to sign: " << form.getGradeToSign() << ", grade to execute: " << form.getGradeToExecute();
     return os;
 }
