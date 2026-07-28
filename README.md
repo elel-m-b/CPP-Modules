@@ -43,27 +43,57 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 - **🧠 Module 01** - *Memory & References*
   - Dynamic memory allocation
   - Pointers vs references
-  - Switch statements
+  - References & switch statements
 
-- **⚡ Module 02** - *Polymorphism Intro*
-  - Ad-hoc polymorphism
+- **⚡ Module 02** - *Ad-hoc Polymorphism*
   - Operator overloading
-  - Orthodox canonical classes
+  - Fixed-point numbers
+  - Orthodox Canonical Form
+
+- **🔗 Module 03** - *Inheritance*
+  - Class inheritance
+  - Base & derived classes
+  - Virtual functions
+
+- **🎭 Module 04** - *Subtype Polymorphism*
+  - Abstract classes
+  - Pure virtual functions
+  - Interfaces & deep copies
 
 </td>
 <td width="50%">
 
+### 🚀 **Advanced C++**
 
+- **📝 Module 05** - *Exceptions*
+  - Exception handling
+  - `try` / `catch` / `throw`
+  - Bureaucrat & forms
 
-- **🔗 Module 03** - *Inheritance*
-  - Class hierarchies
-  - Protected members
-  - Virtual functions
+- **🔄 Module 06** - *C++ Casts*
+  - Scalar conversion
+  - `static_cast`
+  - `dynamic_cast`
+  - `reinterpret_cast`
+  - `const_cast`
 
-- **🎭 Module 04** - *Abstract Classes*
-  - Subtype polymorphism
-  - Pure virtual functions
-  - Interface design
+- **📚 Module 07** - *Templates*
+  - Function templates
+  - Class templates
+  - Generic programming
+
+- **📦 Module 08** - *Templated Containers*
+  - STL containers
+  - Iterators
+  - Algorithms
+  - Easy find & spans
+
+- **⚙️ Module 09** - *STL in Practice*
+  - STL algorithms
+  - Containers in real projects
+  - Bitcoin Exchange
+  - Reverse Polish Notation
+  - Ford–Johnson Merge-Insertion Sort
 
 </td>
 </tr>
