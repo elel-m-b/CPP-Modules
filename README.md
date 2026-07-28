@@ -1,136 +1,87 @@
-
-</div>
+# 42 C++ Modules
 
 <div align="center">
-  <img 
+  <img
     src="https://github.com/user-attachments/assets/74f39eb1-8c7e-4faa-887f-9a33742fe1dc"
-    alt="C++"
-    style="width: 100%; max-width: 1200px; height: auto; border-radius: 8px;"
+    alt="42 C++ Modules"
+    width="100%"
   />
 </div>
 
-<div align="center">
-
-*A comprehensive collection of exercises designed to master the fundamentals of **C++ programming***
-
-</div>
+A collection of solutions and notes for the C++ Modules from the 42 School curriculum.
 
 ---
 
-##  About
+## About
 
-The **42 C++ Modules** represent a carefully curated learning path through the intricacies of C++ programming. Following the renowned **42 School curriculum**, this project takes you on a journey from basic syntax to advanced programming paradigms.
+This repository follows the official 42 C++ curriculum, covering the language from the basics of object-oriented programming to templates, the STL, and generic programming.
 
-> **Goal**: Not just to learn C++ syntax, but to truly understand the *why* and *how* behind Object-Oriented Programming, memory management, and modern C++ practices.
-
----
-
-## Modules Overview
-
-<div align="center">
-
-<table>
-<tr>
-<td width="50%">
-
-###  **Foundation Modules**
-
-- ** Module 00** - *C++ Basics*
-  - Namespaces & I/O streams
-  - Classes & member functions
-  - First steps into OOP
-
-- ** Module 01** - *Memory & References*
-  - Dynamic memory allocation
-  - Pointers vs references
-  - References & switch statements
-
-- ** Module 02** - *Ad-hoc Polymorphism*
-  - Operator overloading
-  - Fixed-point numbers
-  - Orthodox Canonical Form
-
-- ** Module 03** - *Inheritance*
-  - Class inheritance
-  - Base & derived classes
-  - Virtual functions
-
-- ** Module 04** - *Subtype Polymorphism*
-  - Abstract classes
-  - Pure virtual functions
-  - Interfaces & deep copies
-
-</td>
-<td width="50%">
-
-### **Advanced C++**
-
-- ** Module 05** - *Exceptions*
-  - Exception handling
-  - `try` / `catch` / `throw`
-  - Bureaucrat & forms
-
-- ** Module 06** - *C++ Casts*
-  - Scalar conversion
-  - `static_cast`
-  - `dynamic_cast`
-  - `reinterpret_cast`
-  - `const_cast`
-
-- ** Module 07** - *Templates*
-  - Function templates
-  - Class templates
-  - Generic programming
-
-- ** Module 08** - *Templated Containers*
-  - STL containers
-  - Iterators
-  - Algorithms
-  - Easy find & spans
-
-- ** Module 09** - *STL in Practice*
-  - STL algorithms
-  - Containers in real projects
-  - Bitcoin Exchange
-  - Reverse Polish Notation
-  - Ford–Johnson Merge-Insertion Sort
-
-</td>
-</tr>
-</table>
-
-</div>
+The goal of these modules is to build a solid understanding of C++ by writing code rather than relying on external libraries or modern language features. All projects follow the C++98 standard, encouraging a deeper understanding of memory management, inheritance, polymorphism, exceptions, and templates.
 
 ---
 
-## Additional Resources
+## Modules
 
-<div align="center">
+| Module | Topics |
+|--------|--------|
+| **CPP00** | Namespaces, classes, member functions, stdio streams, class basics |
+| **CPP01** | Memory allocation, pointers, references, switch statements |
+| **CPP02** | Orthodox Canonical Form, operator overloading, fixed-point numbers |
+| **CPP03** | Inheritance, base and derived classes, virtual functions |
+| **CPP04** | Subtype polymorphism, abstract classes, interfaces, deep copy |
+| **CPP05** | Exceptions, `try`, `catch`, `throw`, forms and bureaucrats |
+| **CPP06** | Scalar conversion, C++ casts, RTTI |
+| **CPP07** | Function templates, class templates, generic programming |
+| **CPP08** | STL containers, iterators, algorithms |
+| **CPP09** | STL in practice, Bitcoin Exchange, RPN, Merge-Insertion Sort |
 
-| **Resource** | **Link** |
-|--------------|----------|
-| **42 Intranet** | [intra.42.fr](https://intra.42.fr) |
-| **C++ Reference** | [cppreference.com](https://cppreference.com) |
-| **Learn C++** | [learncpp.com](https://learncpp.com) |
+---
 
+## Repository Structure
 
-</div>
+```text
+.
+├── cpp00/
+├── cpp01/
+├── cpp02/
+├── cpp03/
+├── cpp04/
+├── cpp05/
+├── cpp06/
+├── cpp07/
+├── cpp08/
+├── cpp09/
+└── README.md
+```
+
+Each module contains the exercises required by the subject along with a Makefile and the necessary source files.
+
+---
+
+## Requirements
+
+- C++98 compatible compiler
+- GNU Make
+- Linux or macOS
+
+Example:
+
+```bash
+cd cpp00/ex00
+make
+./ex00
+```
+
+---
+
+## References
+
+- 42 Intranet — https://intra.42.fr
+- cppreference — https://cppreference.com
+- Learn C++ — https://www.learncpp.com
 
 ---
 
 ## License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-<div align="center">
-
-**Made with by the 42 Community**
-
-*"The best way to learn C++ is to code C++"*
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/42-cpp-modules?style=social)](https://github.com/yourusername/42-cpp-modules/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/42-cpp-modules?style=social)](https://github.com/yourusername/42-cpp-modules/network/members)
-
-</div>
+This repository is released under the MIT License. See the [LICENSE](LICENSE) file for more information.
