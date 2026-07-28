@@ -17,15 +17,15 @@
 
 ---
 
-## 📚 About
+##  About
 
 The **42 C++ Modules** represent a carefully curated learning path through the intricacies of C++ programming. Following the renowned **42 School curriculum**, this project takes you on a journey from basic syntax to advanced programming paradigms.
 
-> 🎯 **Goal**: Not just to learn C++ syntax, but to truly understand the *why* and *how* behind Object-Oriented Programming, memory management, and modern C++ practices.
+> **Goal**: Not just to learn C++ syntax, but to truly understand the *why* and *how* behind Object-Oriented Programming, memory management, and modern C++ practices.
 
 ---
 
-## 🗺️ Modules Overview
+## Modules Overview
 
 <div align="center">
 
@@ -33,29 +33,29 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 <tr>
 <td width="50%">
 
-### 🏗️ **Foundation Modules**
+###  **Foundation Modules**
 
-- **📦 Module 00** - *C++ Basics*
+- ** Module 00** - *C++ Basics*
   - Namespaces & I/O streams
   - Classes & member functions
   - First steps into OOP
 
-- **🧠 Module 01** - *Memory & References*
+- ** Module 01** - *Memory & References*
   - Dynamic memory allocation
   - Pointers vs references
   - References & switch statements
 
-- **⚡ Module 02** - *Ad-hoc Polymorphism*
+- ** Module 02** - *Ad-hoc Polymorphism*
   - Operator overloading
   - Fixed-point numbers
   - Orthodox Canonical Form
 
-- **🔗 Module 03** - *Inheritance*
+- ** Module 03** - *Inheritance*
   - Class inheritance
   - Base & derived classes
   - Virtual functions
 
-- **🎭 Module 04** - *Subtype Polymorphism*
+- ** Module 04** - *Subtype Polymorphism*
   - Abstract classes
   - Pure virtual functions
   - Interfaces & deep copies
@@ -63,32 +63,32 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 </td>
 <td width="50%">
 
-### 🚀 **Advanced C++**
+### **Advanced C++**
 
-- **📝 Module 05** - *Exceptions*
+- ** Module 05** - *Exceptions*
   - Exception handling
   - `try` / `catch` / `throw`
   - Bureaucrat & forms
 
-- **🔄 Module 06** - *C++ Casts*
+- ** Module 06** - *C++ Casts*
   - Scalar conversion
   - `static_cast`
   - `dynamic_cast`
   - `reinterpret_cast`
   - `const_cast`
 
-- **📚 Module 07** - *Templates*
+- ** Module 07** - *Templates*
   - Function templates
   - Class templates
   - Generic programming
 
-- **📦 Module 08** - *Templated Containers*
+- ** Module 08** - *Templated Containers*
   - STL containers
   - Iterators
   - Algorithms
   - Easy find & spans
 
-- **⚙️ Module 09** - *STL in Practice*
+- ** Module 09** - *STL in Practice*
   - STL algorithms
   - Containers in real projects
   - Bitcoin Exchange
@@ -103,22 +103,22 @@ The **42 C++ Modules** represent a carefully curated learning path through the i
 
 ---
 
-## 📖 Additional Resources
+## Additional Resources
 
 <div align="center">
 
 | **Resource** | **Link** |
 |--------------|----------|
-| 📚 **42 Intranet** | [intra.42.fr](https://intra.42.fr) |
-| 📖 **C++ Reference** | [cppreference.com](https://cppreference.com) |
-| 🎓 **Learn C++** | [learncpp.com](https://learncpp.com) |
+| **42 Intranet** | [intra.42.fr](https://intra.42.fr) |
+| **C++ Reference** | [cppreference.com](https://cppreference.com) |
+| **Learn C++** | [learncpp.com](https://learncpp.com) |
 
 
 </div>
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
@@ -126,7 +126,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 <div align="center">
 
-**Made with ❤️ by the 42 Community**
+**Made with by the 42 Community**
 
 *"The best way to learn C++ is to code C++"*
 
