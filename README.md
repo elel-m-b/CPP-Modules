@@ -1,5 +1,5 @@
 <div align="center">
-C++ Modules from the 42 School
+  <h3>C++ Modules from the 42 School</h3>
 </div>
 <div align="center">
   <img
