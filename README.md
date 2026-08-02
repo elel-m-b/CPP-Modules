@@ -24,7 +24,7 @@ The goal of these modules is to build a solid understanding of C++ by writing co
 ```mermaid
 flowchart TB
 
-    START( Begin C++])
+    START([🚀 Begin C++])
 
     START --> CPP00
     CPP00 --> CPP01
@@ -36,10 +36,10 @@ flowchart TB
     CPP06 --> CPP07
     CPP07 --> CPP08
     CPP08 --> CPP09
-    CPP09 --> END([Complete])
+    CPP09 --> END([🏆 Complete])
 
     CPP00["CPP00<br/>Namespaces • Classes • Member Functions"]
-    CPP01["CPP01<br/>Memory • References"]
+    CPP01["CPP01<br/>Memory • Pointers • References"]
     CPP02["CPP02<br/>Canonical Form • Operator Overloading"]
     CPP03["CPP03<br/>Inheritance • Virtual Functions"]
     CPP04["CPP04<br/>Polymorphism • Abstract Classes"]
@@ -47,7 +47,7 @@ flowchart TB
     CPP06["CPP06<br/>Casts • RTTI • Scalar Conversion"]
     CPP07["CPP07<br/>Function & Class Templates"]
     CPP08["CPP08<br/>STL Containers • Iterators • Algorithms"]
-    CPP09["CPP09<br/>STL Practice • RPN • Merge-Insertion"]
+    CPP09["CPP09<br/>STL Practice • RPN • Bitcoin • Merge-Insertion"]
 ```
 
 ---
