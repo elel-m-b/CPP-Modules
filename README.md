@@ -1,5 +1,6 @@
-# 42 C++ Modules
-
+<div align="center">
+C++ Modules from the 42 School
+</div>
 <div align="center">
   <img
     src="https://github.com/user-attachments/assets/a8cd8ff3-ed9a-4213-83bc-ad856276e9a2"
