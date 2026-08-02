@@ -2,7 +2,7 @@
 
 <div align="center">
   <img
-    src="https://github.com/user-attachments/assets/74f39eb1-8c7e-4faa-887f-9a33742fe1dc"
+    src="https://github.com/user-attachments/assets/a8cd8ff3-ed9a-4213-83bc-ad856276e9a2"
     alt="42 C++ Modules"
     width="100%"
   />
