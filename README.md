@@ -19,21 +19,36 @@ This repository follows the official 42 C++ curriculum, covering the language fr
 The goal of these modules is to build a solid understanding of C++ by writing code rather than relying on external libraries or modern language features. All projects follow the C++98 standard, encouraging a deeper understanding of memory management, inheritance, polymorphism, exceptions, and templates.
 
 ---
+## C++ Modules Roadmap
 
-## Modules
+```mermaid
+flowchart TB
 
-| Module | Topics |
-|--------|--------|
-| **CPP00** | Namespaces, classes, member functions, stdio streams, class basics |
-| **CPP01** | Memory allocation, pointers, references, switch statements |
-| **CPP02** | Orthodox Canonical Form, operator overloading, fixed-point numbers |
-| **CPP03** | Inheritance, base and derived classes, virtual functions |
-| **CPP04** | Subtype polymorphism, abstract classes, interfaces, deep copy |
-| **CPP05** | Exceptions, `try`, `catch`, `throw`, forms and bureaucrats |
-| **CPP06** | Scalar conversion, C++ casts, RTTI |
-| **CPP07** | Function templates, class templates, generic programming |
-| **CPP08** | STL containers, iterators, algorithms |
-| **CPP09** | STL in practice, Bitcoin Exchange, RPN, Merge-Insertion Sort |
+    START([🚀 Begin C++])
+
+    START --> CPP00
+    CPP00 --> CPP01
+    CPP01 --> CPP02
+    CPP02 --> CPP03
+    CPP03 --> CPP04
+    CPP04 --> CPP05
+    CPP05 --> CPP06
+    CPP06 --> CPP07
+    CPP07 --> CPP08
+    CPP08 --> CPP09
+    CPP09 --> END([🏆 Complete])
+
+    CPP00["CPP00<br/>Namespaces • Classes • Member Functions"]
+    CPP01["CPP01<br/>Memory • Pointers • References"]
+    CPP02["CPP02<br/>Canonical Form • Operator Overloading"]
+    CPP03["CPP03<br/>Inheritance • Virtual Functions"]
+    CPP04["CPP04<br/>Polymorphism • Abstract Classes"]
+    CPP05["CPP05<br/>Exceptions • Try/Catch • Throw"]
+    CPP06["CPP06<br/>Casts • RTTI • Scalar Conversion"]
+    CPP07["CPP07<br/>Function & Class Templates"]
+    CPP08["CPP08<br/>STL Containers • Iterators • Algorithms"]
+    CPP09["CPP09<br/>STL Practice • RPN • Bitcoin • Merge-Insertion"]
+```
 
 ---
 
