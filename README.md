@@ -24,7 +24,7 @@ The goal of these modules is to build a solid understanding of C++ by writing co
 ```mermaid
 flowchart TB
 
-    START([🚀 Begin C++])
+    START( Begin C++])
 
     START --> CPP00
     CPP00 --> CPP01
@@ -36,10 +36,10 @@ flowchart TB
     CPP06 --> CPP07
     CPP07 --> CPP08
     CPP08 --> CPP09
-    CPP09 --> END([🏆 Complete])
+    CPP09 --> END([Complete])
 
     CPP00["CPP00<br/>Namespaces • Classes • Member Functions"]
-    CPP01["CPP01<br/>Memory • Pointers • References"]
+    CPP01["CPP01<br/>Memory • References"]
     CPP02["CPP02<br/>Canonical Form • Operator Overloading"]
     CPP03["CPP03<br/>Inheritance • Virtual Functions"]
     CPP04["CPP04<br/>Polymorphism • Abstract Classes"]
@@ -47,26 +47,29 @@ flowchart TB
     CPP06["CPP06<br/>Casts • RTTI • Scalar Conversion"]
     CPP07["CPP07<br/>Function & Class Templates"]
     CPP08["CPP08<br/>STL Containers • Iterators • Algorithms"]
-    CPP09["CPP09<br/>STL Practice • RPN • Bitcoin • Merge-Insertion"]
+    CPP09["CPP09<br/>STL Practice • RPN • Merge-Insertion"]
 ```
 
 ---
 
 ## Repository Structure
 
-```text
-.
-├── cpp00/
-├── cpp01/
-├── cpp02/
-├── cpp03/
-├── cpp04/
-├── cpp05/
-├── cpp06/
-├── cpp07/
-├── cpp08/
-├── cpp09/
-└── README.md
+```mermaid
+flowchart TB
+
+    ROOT["📦 Cpp-Modules"]
+
+    ROOT --> CPP00["cpp00/"]
+    ROOT --> CPP01["cpp01/"]
+    ROOT --> CPP02["cpp02/"]
+    ROOT --> CPP03["cpp03/"]
+    ROOT --> CPP04["cpp04/"]
+    ROOT --> CPP05["cpp05/"]
+    ROOT --> CPP06["cpp06/"]
+    ROOT --> CPP07["cpp07/"]
+    ROOT --> CPP08["cpp08/"]
+    ROOT --> CPP09["cpp09/"]
+    ROOT --> README["README.md"]
 ```
 
 Each module contains the exercises required by the subject along with a Makefile and the necessary source files.
