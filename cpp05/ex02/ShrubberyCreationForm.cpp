@@ -2,8 +2,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
-	: AForm("Shrubbery", 145, 137), _target(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm("Shrubbery", 145, 137), _target(target) {}
 
 void ShrubberyCreationForm::executeAction() const
 {

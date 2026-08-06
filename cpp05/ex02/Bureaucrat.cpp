@@ -1,11 +1,12 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Bureaucrat::Bureaucrat(const std::string& name, int grade)
-	: _name(name)
+Bureaucrat::Bureaucrat(const std::string& name, int grade): _name(name)
 {
-	if (grade < 1) throw GradeTooHighException();
-	if (grade > 150) throw GradeTooLowException();
+	if (grade < 1) 
+		throw GradeTooHighException();
+	if (grade > 150) 
+		throw GradeTooLowException();
 	_grade = grade;
 }
 
@@ -13,7 +14,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat& o) : _name(o._name), _grade(o._grade) {
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& o)
 {
-	if (this != &o) _grade = o._grade;
+	if (this != &o) 
+		_grade = o._grade;
 	return *this;
 }
 
@@ -24,21 +26,27 @@ int Bureaucrat::getGrade() const { return _grade; }
 
 void Bureaucrat::incrementGrade()
 {
-	if (_grade <= 1) throw GradeTooHighException();
+	if (_grade <= 1) 
+		throw GradeTooHighException();
 	_grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
-	if (_grade >= 150) throw GradeTooLowException();
+	if (_grade >= 150)
+		throw GradeTooLowException();
 	_grade++;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
-{ return "Grade too high"; }
+{ 
+	return "Grade too high"; 
+}
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
-{ return "Grade too low"; }
+{ 
+	return "Grade too low"; 
+}
 
 void Bureaucrat::signForm(AForm& form)
 {
@@ -46,8 +54,7 @@ void Bureaucrat::signForm(AForm& form)
 		form.beSigned(*this);
 		std::cout << _name << " signed " << form.getName() << std::endl;
 	} catch (std::exception& e) {
-		std::cout << _name << " couldn’t sign "
-		          << form.getName() << " because " << e.what() << std::endl;
+		std::cout << _name << " couldn’t sign "<< form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
@@ -57,8 +64,7 @@ void Bureaucrat::executeForm(AForm const & form) const
 		form.execute(*this);
 		std::cout << _name << " executed " << form.getName() << std::endl;
 	} catch (std::exception& e) {
-		std::cout << _name << " couldn’t execute "
-		          << form.getName() << " because " << e.what() << std::endl;
+		std::cout << _name << " couldn’t execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 

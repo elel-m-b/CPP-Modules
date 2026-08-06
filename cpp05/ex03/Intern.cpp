@@ -38,18 +38,8 @@ AForm* Intern::createPresidential(const std::string& target)
 // Main function
 AForm* Intern::makeForm(const std::string& formName, const std::string& target)
 {
-    const std::string formNames[] = {
-        "shrubbery creation",
-        "robotomy request",
-        "presidential pardon"
-    };
-
-    FormCreator creators[] = {
-        &Intern::createShrubbery,
-        &Intern::createRobotomy,
-        &Intern::createPresidential
-    };
-
+    const std::string formNames[] = {"shrubbery creation","robotomy request","presidential pardon"};
+    AForm* (*creators[])(const std::string&) = {&Intern::createShrubbery,&Intern::createRobotomy,&Intern::createPresidential};
     for (int i = 0; i < 3; i++)
     {
         if (formName == formNames[i])
@@ -58,7 +48,6 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target)
             return creators[i](target);
         }
     }
-
     std::cerr << "Error: Form \"" << formName << "\" does not exist." << std::endl;
     return NULL;
 }

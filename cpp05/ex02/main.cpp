@@ -5,18 +5,26 @@
 
 int main()
 {
-	Bureaucrat boss("Boss", 1);
+	std::cout << "====test1 : Execute before signing=====\n";
+	try{
+		Bureaucrat lmodir("lmodir", 1);
+		ShrubberyCreationForm form("test");
+		lmodir.executeForm(form);
+	}
+	catch(std::exception& e){
+		std::cout << e.what() << std::endl;
+	}
 
-	ShrubberyCreationForm s("home");
-	RobotomyRequestForm r("Bender");
-	PresidentialPardonForm p("Arthur");
-
-	boss.signForm(s);
-	boss.executeForm(s);
-
-	boss.signForm(r);
-	boss.executeForm(r);
-
-	boss.signForm(p);
-	boss.executeForm(p);
+    std::cout << "\n=====test2 :Sign and Execute ===\n";
+    try
+    {
+        Bureaucrat boss("Boss", 1);
+        ShrubberyCreationForm form("home");
+        boss.signForm(form);
+        boss.executeForm(form);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 }

@@ -2,21 +2,19 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-
+#include "Intern.hpp"
 int main()
 {
-	Bureaucrat boss("Boss", 1);
+	Bureaucrat lomodir("lmodir", 1);
+	Intern intern;
 
-	ShrubberyCreationForm s("home");
-	RobotomyRequestForm r("Bender");
-	PresidentialPardonForm p("Arthur");
+	AForm *form;
 
-	boss.signForm(s);
-	boss.executeForm(s);
-
-	boss.signForm(r);
-	boss.executeForm(r);
-
-	boss.signForm(p);
-	boss.executeForm(p);
+	form = intern.makeForm("shrubbery creation", "hassan");
+	if (form)
+	{
+		lomodir.signForm(*form);
+		lomodir.executeForm(*form);
+		delete form;
+	}
 }
