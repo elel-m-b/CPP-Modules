@@ -1,0 +1,76 @@
+# =========================
+# C++ Build Files
+# =========================
+
+# Object files
+*.o
+*.obj
+
+# Dependency files
+*.d
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Executables
+*.out
+*.exe
+*.app
+
+# Static libraries
+*.a
+*.lib
+
+# Shared libraries
+*.so
+*.dylib
+*.dll
+
+
+# =========================
+# Build Directories
+# =========================
+
+build/
+bin/
+obj/
+
+
+# =========================
+# CMake
+# =========================
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+CTestTestfile.cmake
+
+
+# =========================
+# IDE / Editor
+# =========================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+# =========================
+# OS Generated Files
+# =========================
+
+.DS_Store
+Thumbs.db
+
+
+# =========================
+# Temporary Files
+# =========================
+
+*.tmp
+*.temp
+*~

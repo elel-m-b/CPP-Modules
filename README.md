@@ -19,59 +19,36 @@ This repository follows the official 42 C++ curriculum, covering the language fr
 
 The goal of these modules is to build a solid understanding of C++ by writing code rather than relying on external libraries or modern language features. All projects follow the C++98 standard, encouraging a deeper understanding of memory management, inheritance, polymorphism, exceptions, and templates.
 
----
 ## C++ Modules Roadmap
 
-```mermaid
-flowchart TB
-
-    START([🚀 Begin C++])
-
-    START --> CPP00
-    CPP00 --> CPP01
-    CPP01 --> CPP02
-    CPP02 --> CPP03
-    CPP03 --> CPP04
-    CPP04 --> CPP05
-    CPP05 --> CPP06
-    CPP06 --> CPP07
-    CPP07 --> CPP08
-    CPP08 --> CPP09
-    CPP09 --> END([🏆 Complete])
-
-    CPP00["CPP00<br/>This first module of C++ is designed to help you understand the specificities of the language when compared to C. Time to dive into Object-Oriented Programming!"]
-    CPP01["CPP01<br/>This module is designed to help you understand memory allocation, references, pointers to members, and the usage of the switch statement in C++."]
-    CPP02["CPP02<br/>This module is designed to help you understand ad-hoc polymorphism, function overloading, and orthodox canonical classes in C++."]
-    CPP03["CPP03<br/>This module is designed to help you understand inheritance in C++."]
-    CPP04["CPP04<br/>This module is designed to help you understand subtype polymorphism, abstract classes, and interfaces in C++."]
-    CPP05["CPP05<br/>This module is designed to help you understand try/catch and exceptions in C++."]
-    CPP06["CPP06<br/>This module is designed to help you understand the different types of casting in C++."]
-    CPP07["CPP07<br/>This module is designed to help you understand templates in C++."]
-    CPP08["CPP08<br/>This module is designed to help you understand templated containers, iterators, and algorithms in C++."]
-    CPP09["CPP09<br/>This module is designed to help you understand containers in C++."]
-```
-
----
+| Module | Description |
+|---|---|
+| [Module 00](./cpp00) | This first module of C++ is designed to help you understand the specificities of the language when compared to C. Time to dive into Object-Oriented Programming! |
+| [Module 01](./cpp01) | This module is designed to help you understand memory allocation, references, pointers to members, and the usage of the switch statement in C++. |
+| [Module 02](./cpp02) | This module is designed to help you understand ad-hoc polymorphism, function overloading, and orthodox canonical classes in C++. |
+| [Module 03](./cpp03) | This module is designed to help you understand inheritance in C++. |
+| [Module 04](./cpp04) | This module is designed to help you understand subtype polymorphism, abstract classes, and interfaces in C++. |
+| [Module 05](./cpp05) | This module is designed to help you understand try/catch and exceptions in C++. |
+| [Module 06](./cpp06) | This module is designed to help you understand the different types of casting in C++. |
+| [Module 07](./cpp07) | This module is designed to help you understand templates in C++. |
+| [Module 08](./cpp08) | This module is designed to help you understand templated containers, iterators, and algorithms in C++. |
+| [Module 09](./cpp09) | This module is designed to help you understand containers in C++. |
 
 ## Repository Structure
 
-```mermaid
-flowchart TB
-
-    ROOT["📦 Cpp-Modules"]
-
-    ROOT --> CPP00["cpp00/"]
-    ROOT --> CPP01["cpp01/"]
-    ROOT --> CPP02["cpp02/"]
-    ROOT --> CPP03["cpp03/"]
-    ROOT --> CPP04["cpp04/"]
-    ROOT --> CPP05["cpp05/"]
-    ROOT --> CPP06["cpp06/"]
-    ROOT --> CPP07["cpp07/"]
-    ROOT --> CPP08["cpp08/"]
-    ROOT --> CPP09["cpp09/"]
-    ROOT --> README["README.md"]
-```
+```text
+CPP-Modules/
+├── cpp00/
+├── cpp01/
+├── cpp02/
+├── cpp03/
+├── cpp04/
+├── cpp05/
+├── cpp06/
+├── cpp07/
+├── cpp08/
+├── subjects/
+└── README.md
 
 Each module contains the exercises required by the subject along with a Makefile and the necessary source files.
 
