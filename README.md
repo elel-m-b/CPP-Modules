@@ -11,13 +11,13 @@
 
 A collection of solutions and notes for the C++ Modules from the 42 School curriculum.
 
----
-
 ## About
 
 This repository follows the official 42 C++ curriculum, covering the language from the basics of object-oriented programming to templates, the STL, and generic programming.
 
 The goal of these modules is to build a solid understanding of C++ by writing code rather than relying on external libraries or modern language features. All projects follow the C++98 standard, encouraging a deeper understanding of memory management, inheritance, polymorphism, exceptions, and templates.
+
+---
 
 ## C++ Modules Roadmap
 
@@ -34,6 +34,8 @@ The goal of these modules is to build a solid understanding of C++ by writing co
 | [Module 08](./cpp08) | This module is designed to help you understand templated containers, iterators, and algorithms in C++. |
 | [Module 09](./cpp09) | This module is designed to help you understand containers in C++. |
 
+---
+
 ## Repository Structure
 
 ```text
@@ -47,8 +49,12 @@ CPP-Modules/
 ├── cpp06/
 ├── cpp07/
 ├── cpp08/
+├── cpp09/
 ├── subjects/
+├── .gitignore
+├── LICENSE
 └── README.md
+```
 
 Each module contains the exercises required by the subject along with a Makefile and the necessary source files.
 
@@ -60,7 +66,7 @@ Each module contains the exercises required by the subject along with a Makefile
 - GNU Make
 - Linux or macOS
 
-Example:
+### Example
 
 ```bash
 cd cpp00/ex00
@@ -72,12 +78,12 @@ make
 
 ## References
 
-- 42 Intranet — https://intra.42.fr
-- cppreference — https://cppreference.com
-- Learn C++ — https://www.learncpp.com
+- 42 Intranet — [https://intra.42.fr](https://intra.42.fr)
+- cppreference — [https://cppreference.com](https://cppreference.com)
+- Learn C++ — [https://www.learncpp.com](https://www.learncpp.com)
 
 ---
 
 ## License
 
-This repository is released under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This repository is released under the MIT License. See the [LICENSE](./LICENSE) file for more information.
