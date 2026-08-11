@@ -1,62 +1,44 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <exception>
+#include <list>
+#include "easyfind.hpp"
 
-class NotFound : public std::exception
-{
-public:
-    const char* what() const throw()
-    {
-        return "Value not found";
-    }
-};
-
-template <typename T>
-typename T::iterator easyfind(T& container, int value)
-{
-    typename T::iterator it;
-
-    it = std::find(container.begin(), container.end(), value);
-
-    if (it == container.end())
-        throw NotFound();
-
-    return it;
-}
-
-int main()
-{
-    std::vector<int> nums;
-
-    nums.push_back(1);
-    nums.push_back(2);
-    nums.push_back(3);
-    nums.push_back(4);
-    nums.push_back(5);
-    nums.push_back(6);
-
-    try
-    {
-        std::vector<int>::iterator it = easyfind(nums, 5);
-
+int main(){
+    // Test with vector
+    std::vector<int> numbers;
+    numbers.push_back(10);
+    numbers.push_back(20);
+    numbers.push_back(30);
+    numbers.push_back(20);
+    numbers.push_back(40);
+    try{
+        std::vector<int>::const_iterator it = easyfind(numbers, 20);
         std::cout << "Found: " << *it << std::endl;
     }
-    catch (const NotFound& e)
-    {
-        std::cout << e.what() << std::endl;
+    catch (const std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
     }
 
-    try
-    {
-        std::vector<int>::iterator it = easyfind(nums, 563);
-
+    // Test value that doesn't exist
+    try{
+        std::vector<int>::const_iterator it = easyfind(numbers, 99);
         std::cout << "Found: " << *it << std::endl;
     }
-    catch (const NotFound& e)
-    {
-        std::cout << e.what() << std::endl;
+    catch (const std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
     }
 
+    // Test with list
+    std::list<int> values;
+    values.push_back(5);
+    values.push_back(15);
+    values.push_back(25);
+    try{
+        std::list<int>::const_iterator it = easyfind(values, 15);
+        std::cout << "Found in list: " << *it << std::endl;
+    }
+    catch (const std::exception& e){
+        std::cout << "Error: " << e.what() << std::endl;
+    }
     return 0;
 }
