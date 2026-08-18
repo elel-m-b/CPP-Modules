@@ -973,59 +973,43 @@ The Jacobsthal sequence is therefore an important part of the algorithm rather t
 
 # 26. Summary
 
-The complete sorting process can be summarized as:
+## Ford–Johnson Algorithm
 
-```text
-INPUT
-  |
-  v
-Validate numbers
-  |
-  v
-Store in vector + deque
-  |
-  v
-Create pairs
-  |
-  v
-Sort each pair
-  |
-  +-------------------+
-  |                   |
-  v                   v
- Losers             Winners
-                       |
-                       v
-              Recursive sorting
-                       |
-                       v
-                Sorted winners
-                       |
-                       v
-              Create main chain
-                       |
-                       v
-              Generate Jacobsthal
-                    order
-                       |
-                       v
-              Binary-search losers
-                       |
-                       v
-                Insert losers
-                       |
-                       v
-              Insert odd element
-                       |
-                       v
-                 SORTED DATA
-                       |
-                       v
-              Measure execution time
-                       |
-                       v
-                 Final output
+```mermaid
+flowchart TD
+    A["Input"] --> B["Create pairs"]
+
+    B --> C["Compare elements<br/>inside each pair"]
+
+    C --> D["Smaller elements<br/>Losers"]
+    C --> E["Larger elements<br/>Winners"]
+
+    E --> F["Recursively sort<br/>Winners"]
+
+    F --> G["Sorted Winners"]
+
+    G --> H["Create Main Chain"]
+    D --> I["Find remaining Losers"]
+
+    I --> J["Generate Jacobsthal<br/>Insertion Order"]
+
+    J --> K["Take next Loser"]
+
+    K --> L["Binary Search<br/>Main Chain"]
+
+    L --> M["Insert Loser"]
+
+    M --> N{"More Losers?"}
+
+    N -- "Yes" --> K
+    N -- "No" --> O{"Odd Element?"}
+
+    O -- "Yes" --> P["Binary Search + Insert<br/>Odd Element"]
+    O -- "No" --> Q["Sorted Result"]
+
+    P --> Q
 ```
+
 
 The project therefore demonstrates:
 
